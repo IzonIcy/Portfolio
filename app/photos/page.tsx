@@ -1,5 +1,8 @@
 'use client'
 
+import Image from 'next/image'
+import Link from 'next/link'
+
 export default function Photos() {
   return (
     <div style={{
@@ -9,9 +12,9 @@ export default function Photos() {
       paddingTop: 'clamp(60px, 10vh, 120px)',
       paddingBottom: 'clamp(40px, 5vh, 80px)',
     }}>
-      <a href="/" style={{ textDecoration: 'underline', color: 'inherit', marginBottom: '2rem', display: 'block', cursor: 'pointer' }}>
+      <Link href="/" style={{ textDecoration: 'underline', color: 'inherit', marginBottom: '2rem', display: 'block', cursor: 'pointer' }}>
         ← Back
-      </a>
+      </Link>
       
       <h1 style={{
         fontSize: 'clamp(32px, 5vw, 48px)',
@@ -32,9 +35,12 @@ export default function Photos() {
             { src: '/IMG_1594.jpg', alt: 'Photo 7' },
           ].map((photo, i) => (
             <div key={i} style={{ overflow: 'hidden', borderRadius: '8px' }}>
-              <img 
-                src={photo.src} 
+              <Image
+                src={photo.src}
                 alt={photo.alt}
+                width={1200}
+                height={1600}
+                sizes="(max-width: 900px) 100vw, 450px"
                 style={{
                   width: '100%',
                   height: 'auto',
@@ -51,9 +57,12 @@ export default function Photos() {
             { src: '/IMG_1476.jpg', alt: 'Photo 5' },
           ].map((photo, i) => (
             <div key={i} style={{ overflow: 'hidden', borderRadius: '8px' }}>
-              <img 
-                src={photo.src} 
+              <Image
+                src={photo.src}
                 alt={photo.alt}
+                width={1200}
+                height={1600}
+                sizes="(max-width: 900px) 100vw, 450px"
                 style={{
                   width: '100%',
                   height: 'auto',

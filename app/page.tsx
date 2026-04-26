@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function Home() {
   const copyEmail = () => {
     navigator.clipboard.writeText('ryanbahadori74@gmail.com')
@@ -104,12 +106,12 @@ export default function Home() {
           fontSize: 'clamp(13px, 2vw, 16px)',
           fontFamily: 'var(--font-garamond), serif',
         }}>
-          <a href="/writing" style={{ textDecoration: 'underline', cursor: 'pointer', color: 'inherit' }}>
+          <Link href="/writing" style={{ textDecoration: 'underline', cursor: 'pointer', color: 'inherit' }}>
             Writing
-          </a>
-          <a href="/photos" style={{ textDecoration: 'underline', cursor: 'pointer', color: 'inherit' }}>
+          </Link>
+          <Link href="/photos" style={{ textDecoration: 'underline', cursor: 'pointer', color: 'inherit' }}>
             Photos
-          </a>
+          </Link>
           <a
             href="https://github.com/IzonIcy"
             target="_blank"

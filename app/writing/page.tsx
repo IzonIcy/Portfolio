@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function Writing() {
   const posts = [
     { title: 'Coming Soon', date: '2026' },
@@ -13,9 +15,9 @@ export default function Writing() {
       paddingTop: 'clamp(60px, 10vh, 120px)',
       paddingBottom: 'clamp(40px, 5vh, 80px)',
     }}>
-      <a href="/" style={{ textDecoration: 'underline', color: 'inherit', marginBottom: '2rem', display: 'block', cursor: 'pointer' }}>
+      <Link href="/" style={{ textDecoration: 'underline', color: 'inherit', marginBottom: '2rem', display: 'block', cursor: 'pointer' }}>
         ← Back
-      </a>
+      </Link>
       
       <h1 style={{
         fontSize: 'clamp(32px, 5vw, 48px)',

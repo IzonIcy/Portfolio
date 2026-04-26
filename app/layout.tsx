@@ -6,7 +6,10 @@ const garamond = EB_Garamond({
   variable: '--font-garamond',
 })
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: 'Ryan Bahadori',
   description: 'A Student by day ☼ and a Full Stack Developer by night ☾',
   openGraph: {
