@@ -6,7 +6,7 @@ This is an all about me website showcasing my writing, and photography. (more co
 
 ### Running Locally
 
-1. Clone the repository
+1. Clone the repository: Git Clone (url) which in that case is this repo url!
 2. Install dependencies:
    ```bash
    npm install
