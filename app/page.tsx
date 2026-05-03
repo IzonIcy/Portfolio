@@ -39,7 +39,7 @@ export default function Home() {
             <rect x="90" y="10" width="8" height="8" />
             <rect x="82" y="18" width="8" height="8" />
             <rect x="98" y="18" width="8" height="8" />
-            
+
             {/* Upper region */}
             <rect x="75" y="26" width="8" height="8" />
             <rect x="90" y="26" width="8" height="8" />
@@ -48,34 +48,34 @@ export default function Home() {
             <rect x="82" y="34" width="8" height="8" />
             <rect x="98" y="34" width="8" height="8" />
             <rect x="112" y="34" width="8" height="8" />
-            
+
             {/* Right side upper */}
             <rect x="115" y="42" width="8" height="8" />
             <rect x="123" y="50" width="8" height="8" />
             <rect x="130" y="58" width="8" height="8" />
-            
+
             {/* Middle right cluster */}
             <rect x="120" y="70" width="8" height="8" />
             <rect x="128" y="78" width="8" height="8" />
             <rect x="135" y="90" width="8" height="8" />
-            
+
             {/* Center region */}
             <rect x="85" y="50" width="8" height="8" />
             <rect x="75" y="58" width="8" height="8" />
             <rect x="90" y="62" width="8" height="8" />
             <rect x="105" y="58" width="8" height="8" />
-            
+
             {/* Lower middle */}
             <rect x="70" y="75" width="8" height="8" />
             <rect x="82" y="80" width="8" height="8" />
             <rect x="95" y="85" width="8" height="8" />
             <rect x="108" y="80" width="8" height="8" />
-            
+
             {/* Left side */}
             <rect x="60" y="90" width="8" height="8" />
             <rect x="75" y="100" width="8" height="8" />
             <rect x="55" y="110" width="8" height="8" />
-            
+
             {/* Bottom cluster */}
             <rect x="75" y="115" width="8" height="8" />
             <rect x="90" y="120" width="8" height="8" />
@@ -95,7 +95,7 @@ export default function Home() {
           fontFamily: 'var(--font-garamond), serif',
           letterSpacing: '-0.005em',
         }}>
-          <em style={{ fontStyle: 'italic' }}>High school junior out of California.</em> <em style={{ fontStyle: 'italic' }}>Developer, wrestler, photographer.</em> Currently at High School, and making a company from the ground up.
+          <em style={{ fontStyle: 'italic' }}>High school freshman out of California.</em> <em style={{ fontStyle: 'italic' }}>Developer, wrestler, and photographer.</em> Currently at High School, and making a tech company from the ground up.
         </p>
 
         {/* Navigation Links */}
@@ -131,8 +131,8 @@ export default function Home() {
           <button
             type="button"
             onClick={copyEmail}
-            style={{ 
-              textDecoration: 'underline', 
+            style={{
+              textDecoration: 'underline',
               cursor: 'pointer',
               border: 'none',
               background: 'none',
@@ -165,7 +165,7 @@ export default function Home() {
             display: 'block',
           }}
         >
-          Ryan
+          Ryan B
         </span>
       </div>
     </div>

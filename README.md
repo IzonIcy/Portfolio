@@ -17,7 +17,7 @@ This is an all about me website showcasing my writing, and photography. (more co
    ```
 4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## Building for Production
+## Commands to run before running it locally!
 
 ```bash
 npm run build
