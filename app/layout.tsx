@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import { EB_Garamond } from 'next/font/google'
+import { JetBrains_Mono } from 'next/font/google'
 
-const garamond = EB_Garamond({
+const jetbrains = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-garamond',
 })
@@ -38,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={garamond.variable}>
+    <html lang="en" className={jetbrains.variable}>
       <head>
         <meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)" />
         <meta name="theme-color" content="#f5f3ef" media="(prefers-color-scheme: light)" />
