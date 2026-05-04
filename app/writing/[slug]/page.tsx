@@ -124,10 +124,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       <article style={{ maxWidth: '860px' }}>
         <h1
           style={{
-            display: 'inline-block',
-            backgroundColor: '#b9acd5',
-            color: '#f2edf8',
-            padding: '0.12em 0.18em',
+            display: 'block',
             fontSize: 'clamp(48px, 4vw, 64px)',
             lineHeight: 1.05,
             fontWeight: 400,
