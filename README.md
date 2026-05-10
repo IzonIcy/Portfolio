@@ -2,7 +2,7 @@
 
 This is an all about me website showcasing my writing, and photography. (more coming soon!)
  
-**Live Site:** https://portfolio-ecru-rho-94.vercel.app/
+**Live Site:** https://portfolio-ecru-rho-94.vercel.app/ (Website is hosted by Vercel)
 
 ### Running Locally
 
