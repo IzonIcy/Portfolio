@@ -1,48 +1,58 @@
-import type { Metadata } from 'next'
-import { JetBrains_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
+import type { Metadata } from "next";
+import { JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 const jetbrains = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-garamond',
-})
+  subsets: ["latin"],
+  variable: "--font-garamond",
+});
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'Ryan Bahadori',
-  description: 'A Student by day ☼ and a Full Stack Developer by night ☾',
+  title: "Ryan Bahadori",
+  description: "A Student by day ☼ and a Full Stack Developer by night ☾",
   openGraph: {
-    title: 'Ryan Bahadori',
-    description: 'High school junior out of California. Developer, wrestler, photographer.',
-    type: 'website',
+    title: "Ryan Bahadori",
+    description:
+      "High school junior out of California. Developer, wrestler, photographer.",
+    type: "website",
     images: [
       {
-        url: '/og-image.png',
+        url: "/og-image.png",
         width: 1200,
         height: 630,
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Ryan Bahadori',
-    description: 'High school junior out of California. Developer, wrestler, photographer.',
-    images: ['/og-image.png'],
+    card: "summary_large_image",
+    title: "Ryan Bahadori",
+    description:
+      "High school junior out of California. Developer, wrestler, photographer.",
+    images: ["/og-image.png"],
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en" className={jetbrains.variable}>
       <head>
-        <meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)" />
-        <meta name="theme-color" content="#f5f3ef" media="(prefers-color-scheme: light)" />
+        <meta
+          name="theme-color"
+          content="#0f0f0f"
+          media="(prefers-color-scheme: dark)"
+        />
+        <meta
+          name="theme-color"
+          content="#f5f3ef"
+          media="(prefers-color-scheme: light)"
+        />
         <style>{`
           :root {
             --color-text: #0f0f0f;
@@ -129,5 +139,5 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
-  )
+  );
 }
