@@ -16,11 +16,5 @@ This is an all about me website showcasing my writing, and photography. (more co
    npm run dev
    ```
 4. Open [http://localhost:3000](http://localhost:3000) in your browser
-
-## Commands to run before running it locally!
-
-```bash
-npm run build
-npm run start
 ```
 (also i dont know why the pictures are bad quality but i will try to fix it soon!)
