@@ -23,4 +23,4 @@ This is an all about me website showcasing my writing, and photography. (more co
 npm run build
 npm run start
 ```
-(also i dont know why the pictures are bad quality)
+(also i dont know why the pictures are bad quality but i will try to fix it soon!)
