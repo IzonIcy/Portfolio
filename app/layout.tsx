@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Ryan Bahadori",
     description:
-      "High school junior out of California. Developer, wrestler, photographer.",
+      "High School Junior out of California. Developer, Wrestler, Photographer.",
     type: "website",
     images: [
       {
