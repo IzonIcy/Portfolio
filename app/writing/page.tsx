@@ -1,48 +1,58 @@
 'use client'
 
 import Link from 'next/link'
+import { articles } from './articles'
 
 export default function Writing() {
-  const posts = [
-    { title: 'Coming Soon', date: '2026' },
-  ]
-
   return (
     <div style={{
-      minHeight: '100dvh',
+      height: '100dvh',
+      position: 'relative',
+      overflow: 'hidden',
       paddingLeft: 'clamp(40px, 6vw, 80px)',
       paddingRight: 'clamp(40px, 6vw, 80px)',
       paddingTop: 'clamp(60px, 10vh, 120px)',
-      paddingBottom: 'clamp(40px, 5vh, 80px)',
+      paddingBottom: 'clamp(20px, 2vh, 40px)',
     }}>
-      <Link href="/" style={{ textDecoration: 'underline', color: 'inherit', marginBottom: '2rem', display: 'block', cursor: 'pointer' }}>
-        ← Back
-      </Link>
-      
-      <h1 style={{
-        fontSize: 'clamp(32px, 5vw, 48px)',
-        fontFamily: 'var(--font-garamond), serif',
-        marginBottom: '2rem',
-        fontWeight: 400,
+      <div style={{
+        maxWidth: '980px',
+        position: 'relative',
+        zIndex: 10,
       }}>
-        Writing
-      </h1>
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.75rem',
+          fontSize: 'clamp(22px, 1.8vw, 30px)',
+          marginBottom: 'clamp(56px, 7vh, 84px)',
+        }}>
+          <Link href="/" style={{ textDecoration: 'underline', color: 'inherit' }}>
+            Home
+          </Link>
+          <span style={{ opacity: 0.35 }}>Writing</span>
+        </div>
 
-      <div style={{ maxWidth: '700px' }}>
-        {posts.map((post, i) => (
-          <div key={i} style={{ marginBottom: '2rem', paddingBottom: '1rem', borderBottom: '1px solid var(--color-text)', opacity: 0.6 }}>
-            <h2 style={{
-              fontSize: 'clamp(18px, 2.5vw, 24px)',
-              fontFamily: 'var(--font-garamond), serif',
-              marginBottom: '0.5rem',
-              fontWeight: 400,
-            }}>
+        {articles.map((post, i) => (
+          <div key={i} style={{ marginBottom: 'clamp(50px, 6.5vh, 82px)' }}>
+            <Link
+              href={`/writing/${post.slug}`}
+              style={{
+                color: 'inherit',
+                fontSize: 'clamp(44px, 3.6vw, 62px)',
+                lineHeight: 1.06,
+                fontWeight: 300,
+                textDecoration: 'underline',
+                display: 'inline-block',
+                marginBottom: '0.5rem',
+              }}
+            >
               {post.title}
-            </h2>
-            <p style={{ fontSize: '14px', opacity: 0.7 }}>{post.date}</p>
+            </Link>
+            <p style={{ fontSize: 'clamp(17px, 1.15vw, 24px)', opacity: 0.62 }}>{post.description}</p>
           </div>
         ))}
       </div>
+
     </div>
   )
 }
