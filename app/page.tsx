@@ -105,7 +105,7 @@ export default function Home() {
           <em style={{ fontStyle: "italic" }}>
             Developer, Wrestler, and Photographer.
           </em>{" "}
-          Currently at High School, And Making a Tech Company from the ground
+          And Making a Tech Company from the ground
           up.
         </p>
 
