@@ -103,7 +103,7 @@ export default function Home() {
             High school freshman out of California.
           </em>{" "}
           <em style={{ fontStyle: "italic" }}>
-            Developer, Wrestler, and Photographer.
+            Developer, Wrestler, and Photographer,
           </em>{" "}
           And Making a Tech Company from the ground
           up.
