@@ -1,4 +1,4 @@
-# ryanbahadori.com
+# https://portfolio-ecru-rho-94.vercel.app/
 
 Personal site and blog. Built with Astro because I wanted something fast that doesn't ship a megabyte of JavaScript just to render text.
 
