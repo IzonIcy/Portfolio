@@ -40,7 +40,7 @@ const years = Object.keys(groups).sort((a, b) => Number(b) - Number(a));
             <div class="node" data-node>
               <div class="row">
                 <span class="bullet-cell"><span class="bullet"></span></span>
-                <span class="label"><Mention href={`/writing/${post.slug}`}>{post.data.title.replace(/[.!?]+$/, '').toLowerCase()}</Mention><time class="meta" datetime={post.data.publishedAt}>{dateFmt}</time></span>
+                <span class="label"><Mention href={`/writing/${post.id}`}>{post.data.title.replace(/[.!?]+$/, '').toLowerCase()}</Mention><time class="meta" datetime={post.data.publishedAt}>{dateFmt}</time></span>
               </div>
             </div>
           );

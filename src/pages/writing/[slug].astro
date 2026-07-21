@@ -1,18 +1,18 @@
 ---
 import NotionLayout from '@/layouts/NotionLayout.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import '@/styles/prose.css';
 
 export async function getStaticPaths() {
   const posts = await getCollection('writing');
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id },
     props: { post },
   }));
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 
 const cleanedTitle = post.data.title.replace(/[.!?]+$/, '').toLowerCase();
 
@@ -28,7 +28,7 @@ const raw = (post.body || '').replace(/[^\w\s]/g, '');
 const words = raw.split(/\s+/).filter(Boolean).length;
 const mins = Math.max(1, Math.round(words / 200));
 
-const editUrl = `https://github.com/IzonIcy/Portfolio/edit/main/src/content/writing/${post.slug}.mdx`;
+const editUrl = `https://github.com/IzonIcy/Portfolio/edit/main/src/content/writing/${post.id}.mdx`;
 ---
 
 <NotionLayout

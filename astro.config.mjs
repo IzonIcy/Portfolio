@@ -1,7 +1,7 @@
+import { unified } from '@astrojs/markdown-remark';
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
-import tailwind from '@astrojs/tailwind';
 import { defineConfig } from 'astro/config';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrettyCode from 'rehype-pretty-code';
@@ -50,26 +50,27 @@ const rehypePrettyCodeOptions = {
 export default defineConfig({
   site: 'https://ryanbahadori.com',
   integrations: [
-    tailwind(),
     react(),
     mdx(),
     sitemap(),
   ],
   markdown: {
     syntaxHighlight: false,
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [
-      rehypeSlug,
-      [rehypePrettyCode, rehypePrettyCodeOptions],
-      [
-        rehypeAutolinkHeadings,
-        {
-          properties: {
-            className: ['anchor'],
+    processor: unified({
+      remarkPlugins: [remarkGfm],
+      rehypePlugins: [
+        rehypeSlug,
+        [rehypePrettyCode, rehypePrettyCodeOptions],
+        [
+          rehypeAutolinkHeadings,
+          {
+            properties: {
+              className: ['anchor'],
+            },
           },
-        },
+        ],
+        rehypeLazyImages,
       ],
-      rehypeLazyImages,
-    ],
+    }),
   },
 });
