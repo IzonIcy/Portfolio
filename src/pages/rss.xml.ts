@@ -22,7 +22,7 @@ export const GET: APIRoute = async () => {
   const items = posts
     .map((post) => {
       const cleanedTitle = post.data.title.replace(/[.!?]+$/, '').toLowerCase();
-      const url = `${SITE}/writing/${post.slug}`;
+      const url = `${SITE}/writing/${post.id}`;
       const pubDate = new Date(post.data.publishedAt).toUTCString();
       const summary = post.data.summary || '';
       return `    <item>
