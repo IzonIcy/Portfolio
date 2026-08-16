@@ -49,3 +49,6 @@ opencode.json
 database.db
 database.db-shm
 database.db-wal
+# Agent instruction files
+AGENTS.md
+CLAUDE.md
