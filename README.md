@@ -2,8 +2,6 @@
 
 Personal site and blog. Built with Astro because I wanted something fast that doesn't ship a megabyte of JavaScript just to render text.
 
-**Live:** [https://ryanbahadori.com](https://ryanbahadori.com)
-
 ## What's here
 
 - A portfolio of work and projects
