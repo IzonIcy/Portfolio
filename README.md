@@ -1,5 +1,7 @@
 # https://portfolio-ecru-rho-94.vercel.app/
 
+[![CI](https://github.com/IzonIcy/Portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/IzonIcy/Portfolio/actions/workflows/ci.yml)
+
 Personal site and blog. Built with Astro because I wanted something fast that doesn't ship a megabyte of JavaScript just to render text.
 
 ## What's here
