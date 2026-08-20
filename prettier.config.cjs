@@ -1,8 +1,16 @@
 module.exports = {
   plugins: [
-    require.resolve('@trivago/prettier-plugin-sort-imports'),
+    require.resolve('prettier-plugin-astro'),
     require.resolve('prettier-plugin-tailwindcss'),
   ],
   singleQuote: true,
   trailingComma: 'all',
+  overrides: [
+    {
+      files: '*.astro',
+      options: {
+        parser: 'astro',
+      },
+    },
+  ],
 };

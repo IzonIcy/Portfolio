@@ -7,7 +7,8 @@ const allPosts = await getCollection('writing');
 const latestPosts = allPosts
   .sort(
     (a, b) =>
-      new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime()
+      new Date(b.data.publishedAt).getTime() -
+      new Date(a.data.publishedAt).getTime(),
   )
   .slice(0, 5);
 ---
@@ -28,21 +29,40 @@ const latestPosts = allPosts
         <span class="bullet"></span>
         <span class="caret" aria-hidden>
           <svg viewBox="0 0 8 8" fill="none">
-            <path d="M2 1l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path
+              d="M2 1l4 3-4 3"
+              stroke="currentColor"
+              stroke-width="1.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
           </svg>
         </span>
       </span>
-      <span class="label">now<span class="meta" data-now-stamp aria-hidden="true"></span></span>
+      <span class="label"
+        >now<span class="meta" data-now-stamp aria-hidden="true"></span></span
+      >
     </div>
     <div class="children">
       <div class="node" data-node>
-        <div class="row"><span class="bullet-cell"><span class="bullet"></span></span><span class="label">building useful things that scale</span></div>
+        <div class="row">
+          <span class="bullet-cell"><span class="bullet"></span></span><span
+            class="label">building useful things that scale</span
+          >
+        </div>
       </div>
       <div class="node" data-node>
-        <div class="row"><span class="bullet-cell"><span class="bullet"></span></span><span class="label">wrestling. always wrestling</span></div>
+        <div class="row">
+          <span class="bullet-cell"><span class="bullet"></span></span><span
+            class="label">wrestling. always wrestling</span
+          >
+        </div>
       </div>
       <div class="node" data-node>
-        <div class="row"><span class="bullet-cell"><span class="bullet"></span></span><span class="label">high school junior out of california</span></div>
+        <div class="row">
+          <span class="bullet-cell"><span class="bullet"></span></span><span
+            class="label">high school junior out of california</span
+          >
+        </div>
       </div>
     </div>
   </div>
@@ -53,7 +73,12 @@ const latestPosts = allPosts
         <span class="bullet"></span>
         <span class="caret" aria-hidden>
           <svg viewBox="0 0 8 8" fill="none">
-            <path d="M2 1l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path
+              d="M2 1l4 3-4 3"
+              stroke="currentColor"
+              stroke-width="1.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
           </svg>
         </span>
       </span>
@@ -61,25 +86,72 @@ const latestPosts = allPosts
     </div>
     <div class="children">
       <div class="node" data-node>
-        <div class="row"><span class="bullet-cell"><span class="bullet"></span></span><span class="label"><Mention href="https://github.com/IzonIcy/Spine">Spine</Mention><span class="meta">meta package manager for any *nix</span></span></div>
+        <div class="row">
+          <span class="bullet-cell"><span class="bullet"></span></span><span
+            class="label"
+            ><Mention href="https://github.com/IzonIcy/Spine">Spine</Mention
+            ><span class="meta">meta package manager for any *nix</span></span
+          >
+        </div>
       </div>
       <div class="node" data-node>
-        <div class="row"><span class="bullet-cell"><span class="bullet"></span></span><span class="label"><Mention href="https://github.com/IzonIcy/Clay">Clay</Mention><span class="meta">fast homebrew-compatible package manager in rust</span></span></div>
+        <div class="row">
+          <span class="bullet-cell"><span class="bullet"></span></span><span
+            class="label"
+            ><Mention href="https://github.com/IzonIcy/Clay">Clay</Mention><span
+              class="meta"
+              >fast homebrew-compatible package manager in rust</span
+            ></span
+          >
+        </div>
       </div>
       <div class="node" data-node>
-        <div class="row"><span class="bullet-cell"><span class="bullet"></span></span><span class="label"><Mention href="https://github.com/IzonIcy/Angel">Angel</Mention><span class="meta">autonomous ai agent with persistent memory</span></span></div>
+        <div class="row">
+          <span class="bullet-cell"><span class="bullet"></span></span><span
+            class="label"
+            ><Mention href="https://github.com/IzonIcy/Angel">Angel</Mention
+            ><span class="meta">autonomous ai agent with persistent memory</span
+            ></span
+          >
+        </div>
       </div>
       <div class="node" data-node>
-        <div class="row"><span class="bullet-cell"><span class="bullet"></span></span><span class="label"><Mention href="https://github.com/IzonIcy/LumiCompiler">LumiCompiler</Mention><span class="meta">the official lumi compiler</span></span></div>
+        <div class="row">
+          <span class="bullet-cell"><span class="bullet"></span></span><span
+            class="label"
+            ><Mention href="https://github.com/IzonIcy/LumiCompiler"
+              >LumiCompiler</Mention
+            ><span class="meta">the official lumi compiler</span></span
+          >
+        </div>
       </div>
       <div class="node" data-node>
-        <div class="row"><span class="bullet-cell"><span class="bullet"></span></span><span class="label"><Mention href="https://github.com/IzonIcy/Mist">Mist</Mention><span class="meta">window tiling manager for mac</span></span></div>
+        <div class="row">
+          <span class="bullet-cell"><span class="bullet"></span></span><span
+            class="label"
+            ><Mention href="https://github.com/IzonIcy/Mist">Mist</Mention><span
+              class="meta">window tiling manager for mac</span
+            ></span
+          >
+        </div>
       </div>
       <div class="node" data-node>
-        <div class="row"><span class="bullet-cell"><span class="bullet"></span></span><span class="label"><Mention href="https://github.com/IzonIcy/DotFiles">DotFiles</Mention><span class="meta">personal dotfiles and dev environment</span></span></div>
+        <div class="row">
+          <span class="bullet-cell"><span class="bullet"></span></span><span
+            class="label"
+            ><Mention href="https://github.com/IzonIcy/DotFiles"
+              >DotFiles</Mention
+            ><span class="meta">personal dotfiles and dev environment</span
+            ></span
+          >
+        </div>
       </div>
       <div class="node" data-node>
-        <div class="row"><span class="bullet-cell"><span class="bullet"></span></span><span class="label"><a class="meta-link" href="/work">all work</a></span></div>
+        <div class="row">
+          <span class="bullet-cell"><span class="bullet"></span></span><span
+            class="label"><a class="meta-link" href="/work">all work</a></span
+          >
+        </div>
       </div>
     </div>
   </div>
@@ -90,23 +162,46 @@ const latestPosts = allPosts
         <span class="bullet"></span>
         <span class="caret" aria-hidden>
           <svg viewBox="0 0 8 8" fill="none">
-            <path d="M2 1l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path
+              d="M2 1l4 3-4 3"
+              stroke="currentColor"
+              stroke-width="1.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
           </svg>
         </span>
       </span>
-      <span class="label">writing<span class="count">{latestPosts.length}</span></span>
+      <span class="label"
+        >writing<span class="count">{latestPosts.length}</span></span
+      >
     </div>
     <div class="children">
-      {latestPosts.map((post) => (
-        <div class="node" data-node>
-          <div class="row">
-            <span class="bullet-cell"><span class="bullet"></span></span>
-            <span class="label"><Mention href={`/writing/${post.id}`}>{post.data.title.replace(/[.!?]+$/, '').toLowerCase()}</Mention><span class="meta">{post.data.publishedAt.slice(0, 4)}</span></span>
+      {
+        latestPosts.map((post) => (
+          <div class="node" data-node>
+            <div class="row">
+              <span class="bullet-cell">
+                <span class="bullet" />
+              </span>
+              <span class="label">
+                <>
+                  <Mention href={`/writing/${post.id}`}>
+                    {post.data.title.replace(/[.!?]+$/, '').toLowerCase()}
+                  </Mention>
+                  <span class="meta">{post.data.publishedAt.slice(0, 4)}</span>
+                </>
+              </span>
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
       <div class="node" data-node>
-        <div class="row"><span class="bullet-cell"><span class="bullet"></span></span><span class="label"><a class="meta-link" href="/writing">all essays</a></span></div>
+        <div class="row">
+          <span class="bullet-cell"><span class="bullet"></span></span><span
+            class="label"
+            ><a class="meta-link" href="/writing">all essays</a></span
+          >
+        </div>
       </div>
     </div>
   </div>
@@ -117,7 +212,12 @@ const latestPosts = allPosts
         <span class="bullet"></span>
         <span class="caret" aria-hidden>
           <svg viewBox="0 0 8 8" fill="none">
-            <path d="M2 1l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path
+              d="M2 1l4 3-4 3"
+              stroke="currentColor"
+              stroke-width="1.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
           </svg>
         </span>
       </span>
@@ -125,16 +225,52 @@ const latestPosts = allPosts
     </div>
     <div class="children">
       <div class="node" data-node>
-        <div class="row"><span class="bullet-cell"><span class="bullet"></span></span><span class="label"><Mention href="https://x.com/FlayIcy">x.com/FlayIcy</Mention></span></div>
+        <div class="row">
+          <span class="bullet-cell"><span class="bullet"></span></span><span
+            class="label"
+            ><Mention href="https://x.com/FlayIcy">x.com/FlayIcy</Mention></span
+          >
+        </div>
       </div>
       <div class="node" data-node>
-        <div class="row"><span class="bullet-cell"><span class="bullet"></span></span><span class="label"><Mention href="https://www.linkedin.com/in/ryan-bahadori-95a9383ab/">linkedin.com/in/ryan-bahadori</Mention></span></div>
+        <div class="row">
+          <span class="bullet-cell"><span class="bullet"></span></span><span
+            class="label"
+            ><Mention
+              href="https://www.linkedin.com/in/ryan-bahadori-95a9383ab/"
+              >linkedin.com/in/ryan-bahadori</Mention
+            ></span
+          >
+        </div>
       </div>
       <div class="node" data-node>
-        <div class="row"><span class="bullet-cell"><span class="bullet"></span></span><span class="label"><Mention href="https://github.com/IzonIcy">github.com/IzonIcy</Mention></span></div>
+        <div class="row">
+          <span class="bullet-cell"><span class="bullet"></span></span><span
+            class="label"
+            ><Mention href="https://github.com/IzonIcy"
+              >github.com/IzonIcy</Mention
+            ></span
+          >
+        </div>
       </div>
       <div class="node" data-node>
-        <div class="row"><span class="bullet-cell"><span class="bullet"></span></span><span class="label"><button class="mention" type="button" data-mention data-email-copy aria-label="Copy email to clipboard">ryanbahadori74 <span aria-hidden="true">[at]</span><span class="sr-only">@</span> gmail <span aria-hidden="true">(dot)</span><span class="sr-only">.</span> com</button></span></div>
+        <div class="row">
+          <span class="bullet-cell"><span class="bullet"></span></span><span
+            class="label"
+            ><button
+              class="mention"
+              type="button"
+              data-mention
+              data-email-copy
+              aria-label="Copy email to clipboard"
+              >ryanbahadori74 <span aria-hidden="true">[at]</span><span
+                class="sr-only">@</span
+              > gmail <span aria-hidden="true">(dot)</span><span class="sr-only"
+                >.</span
+              > com</button
+            ></span
+          >
+        </div>
       </div>
     </div>
   </div>
@@ -155,7 +291,10 @@ const latestPosts = allPosts
     padding: 0 0 16px;
     color: var(--notion-ink);
     cursor: text;
-    font-feature-settings: 'kern' 1, 'cv11', 'ss01';
+    font-feature-settings:
+      'kern' 1,
+      'cv11',
+      'ss01';
     font-kerning: normal;
   }
   .doc-title .age {
@@ -169,7 +308,9 @@ const latestPosts = allPosts
     margin-left: 8px;
     opacity: 0;
     transform: translateX(-4px);
-    transition: opacity 240ms ease, transform 240ms cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition:
+      opacity 240ms ease,
+      transform 240ms cubic-bezier(0.2, 0.7, 0.2, 1);
   }
   body.greeted .doc-title::after {
     content: '👋';
@@ -178,20 +319,38 @@ const latestPosts = allPosts
     animation: wave 1.2s ease-in-out;
   }
   @keyframes wave {
-    0%, 100% { transform: rotate(0); }
-    20%, 60% { transform: rotate(14deg); }
-    40%, 80% { transform: rotate(-8deg); }
+    0%,
+    100% {
+      transform: rotate(0);
+    }
+    20%,
+    60% {
+      transform: rotate(14deg);
+    }
+    40%,
+    80% {
+      transform: rotate(-8deg);
+    }
   }
   body.greeted .bullet {
     animation: pulse-bullet 800ms ease-out;
   }
   @keyframes pulse-bullet {
-    0%   { transform: scale(1); }
-    50%  { transform: scale(2.4); opacity: 0.4; }
-    100% { transform: scale(1); }
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(2.4);
+      opacity: 0.4;
+    }
+    100% {
+      transform: scale(1);
+    }
   }
   .node > .row > .label {
-    transition: color var(--dur-normal, 220ms) var(--ease-out-soft, ease), text-decoration-color var(--dur-normal, 220ms) var(--ease-out-soft, ease);
+    transition:
+      color var(--dur-normal, 220ms) var(--ease-out-soft, ease),
+      text-decoration-color var(--dur-normal, 220ms) var(--ease-out-soft, ease);
   }
   .node.done > .row > .label {
     text-decoration: line-through;
@@ -201,7 +360,9 @@ const latestPosts = allPosts
   .node.done > .row > .bullet-cell > .bullet {
     background: var(--notion-faint);
     transform: scale(0.85);
-    transition: background var(--dur-normal, 220ms) var(--ease-out-soft, ease), transform var(--dur-normal, 220ms) var(--ease-spring, ease);
+    transition:
+      background var(--dur-normal, 220ms) var(--ease-out-soft, ease),
+      transform var(--dur-normal, 220ms) var(--ease-spring, ease);
   }
 
   .node {
@@ -294,9 +455,12 @@ const latestPosts = allPosts
     width: 8px;
     height: 8px;
     display: block;
-    transition: transform var(--dur-normal, 220ms) var(--ease-out-soft, cubic-bezier(0.2, 0.7, 0.2, 1));
+    transition: transform var(--dur-normal, 220ms)
+      var(--ease-out-soft, cubic-bezier(0.2, 0.7, 0.2, 1));
   }
-  .node.open > .row > .bullet-cell > .caret svg { transform: rotate(90deg); }
+  .node.open > .row > .bullet-cell > .caret svg {
+    transform: rotate(90deg);
+  }
 
   .label {
     min-width: 0;
@@ -319,10 +483,18 @@ const latestPosts = allPosts
       opacity 200ms ease;
   }
   @media (hover: hover) and (pointer: fine) {
-    .row:hover { background: var(--notion-row-hover); }
-    .row:hover .bullet { transform: scale(1.4); }
-    .node.has-children > .row:hover > .bullet-cell > .bullet { opacity: 0; }
-    .node.has-children > .row:hover > .bullet-cell > .caret { opacity: 1; }
+    .row:hover {
+      background: var(--notion-row-hover);
+    }
+    .row:hover .bullet {
+      transform: scale(1.4);
+    }
+    .node.has-children > .row:hover > .bullet-cell > .bullet {
+      opacity: 0;
+    }
+    .node.has-children > .row:hover > .bullet-cell > .caret {
+      opacity: 1;
+    }
   }
 
   .node:not(.open) > .children {
@@ -344,7 +516,9 @@ const latestPosts = allPosts
     padding: 4px 8px 4px 0;
     border-radius: 4px;
     opacity: 0.65;
-    transition: opacity var(--dur-normal, 200ms) ease, background var(--dur-quick, 140ms) ease;
+    transition:
+      opacity var(--dur-normal, 200ms) ease,
+      background var(--dur-quick, 140ms) ease;
   }
   .write-row:hover {
     background: var(--notion-row-hover);
@@ -392,14 +566,27 @@ const latestPosts = allPosts
       const stamp = document.querySelector('[data-now-stamp]');
       if (stamp) {
         const now = new Date();
-        const dayNames = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+        const dayNames = [
+          'sunday',
+          'monday',
+          'tuesday',
+          'wednesday',
+          'thursday',
+          'friday',
+          'saturday',
+        ];
         const day = dayNames[now.getDay()];
-        const monthShort = now.toLocaleString('en-US', { month: 'short' }).toLowerCase();
+        const monthShort = now
+          .toLocaleString('en-US', { month: 'short' })
+          .toLowerCase();
         const monthLong = now.toLocaleString('en-US', { month: 'long' });
         stamp.textContent = day + ' · ' + now.getDate() + ' ' + monthShort;
         /* readable for screen readers */
         stamp.removeAttribute('aria-hidden');
-        stamp.setAttribute('aria-label', `Today is ${day.charAt(0).toUpperCase() + day.slice(1)}, ${monthLong} ${now.getDate()}, ${now.getFullYear()}`);
+        stamp.setAttribute(
+          'aria-label',
+          `Today is ${day.charAt(0).toUpperCase() + day.slice(1)}, ${monthLong} ${now.getDate()}, ${now.getFullYear()}`,
+        );
       }
 
       /* double-click bullet → toggle done state (visual only) */

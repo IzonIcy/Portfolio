@@ -16,7 +16,9 @@ function escapeXml(str: string) {
 
 export const GET: APIRoute = async () => {
   const posts = (await getCollection('writing')).sort(
-    (a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime()
+    (a, b) =>
+      new Date(b.data.publishedAt).getTime() -
+      new Date(a.data.publishedAt).getTime(),
   );
 
   const items = posts

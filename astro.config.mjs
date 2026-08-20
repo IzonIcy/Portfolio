@@ -49,11 +49,7 @@ const rehypePrettyCodeOptions = {
 
 export default defineConfig({
   site: 'https://ryanbahadori.com',
-  integrations: [
-    react(),
-    mdx(),
-    sitemap(),
-  ],
+  integrations: [react(), mdx(), sitemap()],
   markdown: {
     syntaxHighlight: false,
     processor: unified({

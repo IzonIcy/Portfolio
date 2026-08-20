@@ -37,10 +37,11 @@ xclip -sel clip < ~/.ssh/id_rsa.pub # linux
 ```
 
 add the ssh key to your github account
-  - go to [github.com/settings/keys](https://github.com/settings/keys)
-  - click "New SSH key"
-  - paste the key into the "Key" field
-  - click "Add SSH key"
+
+- go to [github.com/settings/keys](https://github.com/settings/keys)
+- click "New SSH key"
+- paste the key into the "Key" field
+- click "Add SSH key"
 
 clone a repo using ssh
 
@@ -101,7 +102,6 @@ gpg --list-secret-keys --keyid-format LONG
 
 copy the key id (the part after rsa4096/)
 
-
 ```bash
 gpg -K --keyid-format SHORT
 sec rsa4096/######## YYYY-MM-DD [SC] [expires: YYYY-MM-DD]
@@ -122,14 +122,14 @@ git config --global commit.gpgsign true
 ```
 
 add the key to your github account
-  - go to [github.com/settings/keys](https://github.com/settings/keys)
-  - click "New GPG key"
-  - paste the key into the "Key" field
-  - click "Add GPG key"
 
-perform a signed commit 
+- go to [github.com/settings/keys](https://github.com/settings/keys)
+- click "New GPG key"
+- paste the key into the "Key" field
+- click "Add GPG key"
+
+perform a signed commit
 
 ```bash
 git commit -S -m "signed commit"
 ```
-

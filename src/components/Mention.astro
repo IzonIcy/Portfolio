@@ -11,7 +11,9 @@ function detectExternal(url: string): boolean {
   if (!/^https?:\/\//.test(url)) return false;
   try {
     const u = new URL(url);
-    return u.hostname !== 'ryanbahadori.com' && u.hostname !== 'www.ryanbahadori.com';
+    return (
+      u.hostname !== 'ryanbahadori.com' && u.hostname !== 'www.ryanbahadori.com'
+    );
   } catch {
     return false;
   }
@@ -23,10 +25,10 @@ const isExternal = external ?? detectExternal(href);
   class="mention"
   data-mention
   href={href}
-  {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+  {...isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {}}
 >
   <slot />
-  {isExternal && <span class="mention-arrow" aria-hidden="true"></span>}
+  {isExternal && <span class="mention-arrow" aria-hidden="true" />}
 </a>
 
 <style is:global>
@@ -42,7 +44,8 @@ const isExternal = external ?? detectExternal(href);
     box-shadow: inset 0 -1px 0 var(--notion-tint-strong, rgba(24, 24, 27, 0.06));
     transition:
       background var(--dur-quick, 140ms) ease,
-      transform var(--dur-normal, 180ms) var(--ease-out-soft, cubic-bezier(0.2, 0.7, 0.2, 1));
+      transform var(--dur-normal, 180ms)
+        var(--ease-out-soft, cubic-bezier(0.2, 0.7, 0.2, 1));
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
   }
@@ -52,7 +55,7 @@ const isExternal = external ?? detectExternal(href);
      UA injects so the button is metrically identical to the <a>. */
   button.mention {
     -webkit-appearance: none;
-            appearance: none;
+    appearance: none;
     font: inherit;
     line-height: inherit;
     letter-spacing: inherit;
@@ -112,12 +115,12 @@ const isExternal = external ?? detectExternal(href);
       opacity var(--dur-quick, 160ms) ease,
       transform var(--dur-quick, 160ms) ease;
     -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' fill='none'><path d='M3.2 7L7 3.2M7 3.2H3.9M7 3.2V6.3' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>");
-            mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' fill='none'><path d='M3.2 7L7 3.2M7 3.2H3.9M7 3.2V6.3' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' fill='none'><path d='M3.2 7L7 3.2M7 3.2H3.9M7 3.2V6.3' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>");
     -webkit-mask-repeat: no-repeat;
-            mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
     -webkit-mask-position: center;
-            mask-position: center;
+    mask-position: center;
     -webkit-mask-size: contain;
-            mask-size: contain;
+    mask-size: contain;
   }
 </style>

@@ -5,49 +5,88 @@ import { getCollection } from 'astro:content';
 
 const allPosts = await getCollection('writing');
 const sorted = allPosts.sort(
-  (a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime()
+  (a, b) =>
+    new Date(b.data.publishedAt).getTime() -
+    new Date(a.data.publishedAt).getTime(),
 );
-const groups = sorted.reduce((acc, p) => {
-  const year = String(new Date(p.data.publishedAt).getFullYear());
-  (acc[year] ||= []).push(p);
-  return acc;
-}, {} as Record<string, typeof sorted>);
+const groups = sorted.reduce(
+  (acc, p) => {
+    const year = String(new Date(p.data.publishedAt).getFullYear());
+    (acc[year] ||= []).push(p);
+    return acc;
+  },
+  {} as Record<string, typeof sorted>,
+);
 const years = Object.keys(groups).sort((a, b) => Number(b) - Number(a));
 ---
 
 <NotionLayout title="Writing" description="thoughts on design, code, and life.">
-  <a class="page-back" href="/"><span class="back-arrow" aria-hidden="true">↩</span>Index</a>
-  <div class="doc-title">writing<span class="age">, {sorted.length} {sorted.length === 1 ? 'essay' : 'essays'}</span></div>
-  <p class="index-sub">brain dumps. shaped by what I'm building, reading, or annoyed by.</p>
+  <a class="page-back" href="/"
+    ><span class="back-arrow" aria-hidden="true">↩</span>Index</a
+  >
+  <div class="doc-title">
+    writing<span class="age"
+      >, {sorted.length} {sorted.length === 1 ? 'essay' : 'essays'}</span
+    >
+  </div>
+  <p class="index-sub">
+    brain dumps. shaped by what I'm building, reading, or annoyed by.
+  </p>
 
-  {years.map((year, idx) => (
-    <div class={`node has-children ${idx === 0 ? 'open' : ''}`} data-node>
-      <div class="row has-children" tabindex="0">
-        <span class="bullet-cell">
-          <span class="bullet"></span>
-          <span class="caret" aria-hidden>
-            <svg viewBox="0 0 8 8" fill="none">
-              <path d="M2 1l4 3-4 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+  {
+    years.map((year, idx) => (
+      <div class={`node has-children ${idx === 0 ? 'open' : ''}`} data-node>
+        <div class="row has-children" tabindex="0">
+          <span class="bullet-cell">
+            <span class="bullet" />
+            <span class="caret" aria-hidden>
+              <svg viewBox="0 0 8 8" fill="none">
+                <path
+                  d="M2 1l4 3-4 3"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
           </span>
-        </span>
-        <span class="label">{year}<span class="count">{groups[year].length}</span></span>
-      </div>
-      <div class="children">
-        {groups[year].map((post) => {
-          const dateFmt = new Date(post.data.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).toLowerCase();
-          return (
-            <div class="node" data-node>
-              <div class="row">
-                <span class="bullet-cell"><span class="bullet"></span></span>
-                <span class="label"><Mention href={`/writing/${post.id}`}>{post.data.title.replace(/[.!?]+$/, '').toLowerCase()}</Mention><time class="meta" datetime={post.data.publishedAt}>{dateFmt}</time></span>
+          <span class="label">
+            {year}
+            <span class="count">{groups[year].length}</span>
+          </span>
+        </div>
+        <div class="children">
+          {groups[year].map((post) => {
+            const dateFmt = new Date(post.data.publishedAt)
+              .toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                year: 'numeric',
+              })
+              .toLowerCase();
+            return (
+              <div class="node" data-node>
+                <div class="row">
+                  <span class="bullet-cell">
+                    <span class="bullet" />
+                  </span>
+                  <span class="label">
+                    <Mention href={`/writing/${post.id}`}>
+                      {post.data.title.replace(/[.!?]+$/, '').toLowerCase()}
+                    </Mention>
+                    <time class="meta" datetime={post.data.publishedAt}>
+                      {dateFmt}
+                    </time>
+                  </span>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
-    </div>
-  ))}
+    ))
+  }
 
   <div class="write-row" aria-hidden>
     <span class="ghost-bullet"></span>
@@ -65,7 +104,10 @@ const years = Object.keys(groups).sort((a, b) => Number(b) - Number(a));
     padding: 0 0 16px;
     color: var(--notion-ink);
     cursor: text;
-    font-feature-settings: 'kern' 1, 'cv11', 'ss01';
+    font-feature-settings:
+      'kern' 1,
+      'cv11',
+      'ss01';
     font-kerning: normal;
   }
   .doc-title .age {
@@ -173,9 +215,12 @@ const years = Object.keys(groups).sort((a, b) => Number(b) - Number(a));
     width: 8px;
     height: 8px;
     display: block;
-    transition: transform var(--dur-normal, 220ms) var(--ease-out-soft, cubic-bezier(0.2, 0.7, 0.2, 1));
+    transition: transform var(--dur-normal, 220ms)
+      var(--ease-out-soft, cubic-bezier(0.2, 0.7, 0.2, 1));
   }
-  .node.open > .row > .bullet-cell > .caret svg { transform: rotate(90deg); }
+  .node.open > .row > .bullet-cell > .caret svg {
+    transform: rotate(90deg);
+  }
 
   .label {
     min-width: 0;
@@ -218,7 +263,9 @@ const years = Object.keys(groups).sort((a, b) => Number(b) - Number(a));
     padding: 4px 8px 4px 0;
     border-radius: 4px;
     opacity: 0.65;
-    transition: opacity 200ms ease, background 140ms ease;
+    transition:
+      opacity 200ms ease,
+      background 140ms ease;
   }
   .ghost-bullet {
     width: 18px;
@@ -236,11 +283,22 @@ const years = Object.keys(groups).sort((a, b) => Number(b) - Number(a));
   }
 
   @media (hover: hover) and (pointer: fine) {
-    .row:hover { background: var(--notion-row-hover); }
-    .row:hover .bullet { transform: scale(1.4); }
-    .node.has-children > .row:hover > .bullet-cell > .bullet { opacity: 0; }
-    .node.has-children > .row:hover > .bullet-cell > .caret { opacity: 1; }
-    .write-row:hover { background: var(--notion-row-hover); opacity: 1; }
+    .row:hover {
+      background: var(--notion-row-hover);
+    }
+    .row:hover .bullet {
+      transform: scale(1.4);
+    }
+    .node.has-children > .row:hover > .bullet-cell > .bullet {
+      opacity: 0;
+    }
+    .node.has-children > .row:hover > .bullet-cell > .caret {
+      opacity: 1;
+    }
+    .write-row:hover {
+      background: var(--notion-row-hover);
+      opacity: 1;
+    }
   }
 </style>
 

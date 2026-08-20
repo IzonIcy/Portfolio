@@ -19,7 +19,9 @@
   width: 1px;
   background: var(--notion-rule, rgba(24, 24, 27, 0.08));
   border-radius: 1px;
-  transition: width var(--dur-normal, 200ms) ease, background var(--dur-normal, 200ms) ease;
+  transition:
+    width var(--dur-normal, 200ms) ease,
+    background var(--dur-normal, 200ms) ease;
   pointer-events: none;
 }
 
@@ -81,7 +83,10 @@
   margin-left: -8px;
   margin-right: -8px;
   transition: background var(--dur-quick, 140ms) ease;
-  font-feature-settings: 'kern' 1, 'cv11', 'ss01';
+  font-feature-settings:
+    'kern' 1,
+    'cv11',
+    'ss01';
   font-kerning: normal;
 }
 
@@ -97,7 +102,11 @@
   border-radius: 6px;
   /* border removed — shadow alone provides depth */
   margin: 24px 0 8px;
-  box-shadow: var(--notion-shadow, 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.06));
+  box-shadow: var(
+    --notion-shadow,
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 4px 12px rgba(0, 0, 0, 0.06)
+  );
 }
 
 @media (max-width: 720px) {
@@ -149,11 +158,15 @@
 /* Removed the fake [+] [⋮⋮] block gutter affordances — they implied
    editability that didn't exist. The hover-tint background and indent
    guide are enough to feel Notion-like without faking the editor. */
-.prose > hr:hover { background: transparent; }
+.prose > hr:hover {
+  background: transparent;
+}
 
 /* pre uses ::before for code styling — don't conflict */
 .prose > pre::before,
-.prose > pre::after { display: none; }
+.prose > pre::after {
+  display: none;
+}
 
 /* Keyboard focus-visible state for focusable blocks (matches homepage row) */
 .prose > *:focus-visible {
@@ -178,7 +191,7 @@
   height: auto;
   background-color: var(--notion-ink, #18181b);
   -webkit-mask-image: none;
-          mask-image: none;
+  mask-image: none;
   border-radius: 1px;
   opacity: 1;
 }
@@ -266,7 +279,10 @@
   border-radius: 4px;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
-  transition: background var(--dur-quick, 140ms) ease, color var(--dur-quick, 140ms) ease, transform var(--dur-quick, 140ms) var(--ease-out-soft, ease);
+  transition:
+    background var(--dur-quick, 140ms) ease,
+    color var(--dur-quick, 140ms) ease,
+    transform var(--dur-quick, 140ms) var(--ease-out-soft, ease);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -527,7 +543,10 @@
   color: var(--notion-faint, #9b9ba1);
   opacity: 0;
   cursor: pointer;
-  transition: opacity var(--dur-quick, 160ms) ease, color var(--dur-quick, 160ms) ease, background var(--dur-quick, 140ms) ease;
+  transition:
+    opacity var(--dur-quick, 160ms) ease,
+    color var(--dur-quick, 160ms) ease,
+    background var(--dur-quick, 140ms) ease;
 }
 
 .prose .anchor::after {
@@ -695,7 +714,10 @@
     opacity 100ms ease,
     transform var(--dur-quick, 140ms) var(--ease-out-soft, ease);
 }
-.post-write-row:hover { background: var(--notion-row-hover); opacity: 1; }
+.post-write-row:hover {
+  background: var(--notion-row-hover);
+  opacity: 1;
+}
 .post-write-row:active {
   transform: scale(0.997);
 }
@@ -725,8 +747,13 @@
 }
 
 @keyframes post-caret-blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 /* TOC "Top" arrow — chunky SVG mask, rotated 45° (pointing up) */
@@ -739,14 +766,20 @@
   background-color: currentColor;
   opacity: 0.75;
   -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' fill='none'><path d='M5 7.5V2.5M2.5 5L5 2.5L7.5 5' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>");
-          mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' fill='none'><path d='M5 7.5V2.5M2.5 5L5 2.5L7.5 5' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>");
-  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
-  -webkit-mask-position: center; mask-position: center;
-  -webkit-mask-size: contain; mask-size: contain;
+  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' fill='none'><path d='M5 7.5V2.5M2.5 5L5 2.5L7.5 5' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .post-caret-blink { animation: none; opacity: 1; }
+  .post-caret-blink {
+    animation: none;
+    opacity: 1;
+  }
 }
 
 /* ---------- Right-side TOC (≥1280px viewports, posts with ≥3 H2) ---------- */
@@ -769,14 +802,20 @@
     color: var(--notion-faint, #9b9ba1);
     text-align: right;
   }
-  .post-toc[hidden] { display: none; }
+  .post-toc[hidden] {
+    display: none;
+  }
   .post-toc ul {
     list-style: none;
     padding: 0;
     margin: 0;
   }
-  .post-toc li { padding: 2px 0; }
-  .post-toc li.post-toc-h3 { padding-right: 12px; }
+  .post-toc li {
+    padding: 2px 0;
+  }
+  .post-toc li.post-toc-h3 {
+    padding-right: 12px;
+  }
   .post-toc a {
     color: var(--notion-faint, #9b9ba1);
     text-decoration: none;
@@ -786,14 +825,22 @@
     padding: 0;
     border-radius: 0;
   }
-  .post-toc a::after { content: none !important; }
-  @media (hover: hover) and (pointer: fine) {
-    .post-toc a:hover { color: var(--notion-ink, #18181b); }
+  .post-toc a::after {
+    content: none !important;
   }
-  .post-toc a.current { color: var(--notion-ink, #18181b); }
+  @media (hover: hover) and (pointer: fine) {
+    .post-toc a:hover {
+      color: var(--notion-ink, #18181b);
+    }
+  }
+  .post-toc a.current {
+    color: var(--notion-ink, #18181b);
+  }
 }
 @media (min-width: 1440px) {
-  .post-toc { right: 32px; }
+  .post-toc {
+    right: 32px;
+  }
 }
 
 /* ---------- Toast (anchor copy feedback) ---------- */
@@ -810,7 +857,11 @@
   border-radius: 8px;
   font-size: 13px;
   font-family: 'Inter', sans-serif;
-  box-shadow: var(--notion-shadow, 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.06));
+  box-shadow: var(
+    --notion-shadow,
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 4px 12px rgba(0, 0, 0, 0.06)
+  );
   opacity: 0;
   transition:
     opacity 160ms var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1)),
@@ -826,7 +877,9 @@
     transform 220ms var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1));
 }
 
-.toast[hidden] { display: none; }
+.toast[hidden] {
+  display: none;
+}
 
 /* ---------- Reading progress bar ---------- */
 
