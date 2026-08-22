@@ -40,5 +40,6 @@
     "tailwindcss": "^4.3.3",
     "typescript": "^5.1.6"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "packageManager": "pnpm@10.31.0"
 }
