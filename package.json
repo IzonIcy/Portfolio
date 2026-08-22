@@ -26,7 +26,6 @@
     "@astrojs/check": "^0.9.10",
     "@tailwindcss/postcss": "^4.3.3",
     "@tailwindcss/typography": "^0.5.20",
-    "autoprefixer": "^10.4.14",
     "pagefind": "^1.5.2",
     "postcss": "^8.5.26",
     "prettier": "^3.2.0",
