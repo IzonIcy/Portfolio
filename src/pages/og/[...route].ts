@@ -13,9 +13,18 @@ const STATIC_PAGES: Record<string, PageMeta> = {
     description: 'Developer, wrestler, and photographer.',
   },
   work: { title: 'Work', description: 'Things I have built and shipped.' },
-  writing: { title: 'Writing', description: 'thoughts on design, code, and life.' },
-  resources: { title: 'Resources', description: 'Curated links worth keeping around.' },
-  projects: { title: 'Projects', description: 'Open source, live from GitHub.' },
+  writing: {
+    title: 'Writing',
+    description: 'thoughts on design, code, and life.',
+  },
+  resources: {
+    title: 'Resources',
+    description: 'Curated links worth keeping around.',
+  },
+  projects: {
+    title: 'Projects',
+    description: 'Open source, live from GitHub.',
+  },
 };
 
 function imageOptions(page: PageMeta): OGImageOptions {
@@ -42,7 +51,10 @@ const PAGES: Record<string, PageMeta> = {
   ...Object.fromEntries(
     posts.map((post) => [
       `writing/${post.id}`,
-      { title: post.data.title, description: post.data.summary } satisfies PageMeta,
+      {
+        title: post.data.title,
+        description: post.data.summary,
+      } satisfies PageMeta,
     ]),
   ),
 };

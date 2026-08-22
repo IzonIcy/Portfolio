@@ -20,7 +20,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const pathname = Astro.url.pathname;
 const ogRoute =
   pathname === '/' ? 'index' : pathname.replace(/^\//, '').replace(/\/$/, '');
-const ogImage = image ?? new URL(`/og/${ogRoute.replaceAll('/', '-')}.png`, Astro.site).toString();
+const ogImage =
+  image ??
+  new URL(`/og/${ogRoute.replaceAll('/', '-')}.png`, Astro.site).toString();
 const isActive = (href: string) => {
   if (href === '/') return pathname === '/';
   return pathname === href || pathname.startsWith(href + '/');
@@ -869,8 +871,9 @@ const isActive = (href: string) => {
           href="/projects"
           aria-current={isActive('/projects') ? 'page' : undefined}>Projects</a
         >
-        <a href="/search" aria-current={isActive('/search') ? 'page' : undefined}
-          >Search</a
+        <a
+          href="/search"
+          aria-current={isActive('/search') ? 'page' : undefined}>Search</a
         >
         <a
           href="https://x.com/FlayIcy"

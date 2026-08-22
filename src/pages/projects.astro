@@ -5,7 +5,10 @@ import { fetchProjects } from '@/lib/github';
 const { projects, source } = await fetchProjects();
 ---
 
-<NotionLayout title="Projects" description="Open source projects, live from GitHub.">
+<NotionLayout
+  title="Projects"
+  description="Open source projects, live from GitHub."
+>
   <a class="page-back" href="/"
     ><span class="back-arrow" aria-hidden="true">↩</span>Index</a
   >

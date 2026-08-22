@@ -86,7 +86,9 @@ export async function fetchProjects(limit = 8): Promise<{
     }
 
     const projects = repos
-      .filter((repo) => !repo.fork && !repo.name.toLowerCase().includes('config'))
+      .filter(
+        (repo) => !repo.fork && !repo.name.toLowerCase().includes('config'),
+      )
       .sort((a, b) => b.stargazers_count - a.stargazers_count)
       .slice(0, limit)
       .map(toCard);
