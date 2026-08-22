@@ -1,0 +1,31 @@
+---
+import NotionLayout from '@/layouts/NotionLayout.astro';
+---
+
+<NotionLayout title="Search" description="Search essays, resources, and projects.">
+  <a class="page-back" href="/"
+    ><span class="back-arrow" aria-hidden="true">↩</span>Index</a
+  >
+  <div class="doc-title">search</div>
+
+  <link rel="stylesheet" href="/pagefind/pagefind-ui.css" is:inline />
+  <script is:inline src="/pagefind/pagefind-ui.js"></script>
+  <script is:inline>
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.PagefindUI) {
+        new PagefindUI({ element: '#pagefind-search', showImages: false });
+      } else {
+        document.getElementById('pagefind-search').textContent =
+          'Search index unavailable — it is generated during deploy builds.';
+      }
+    });
+  </script>
+
+  <div id="pagefind-search"></div>
+</NotionLayout>
+
+<style>
+  #pagefind-search {
+    margin-top: 1rem;
+  }
+</style>

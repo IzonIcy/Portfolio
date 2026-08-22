@@ -1,0 +1,89 @@
+---
+import NotionLayout from '@/layouts/NotionLayout.astro';
+import { fetchProjects } from '@/lib/github';
+
+const { projects, source } = await fetchProjects();
+---
+
+<NotionLayout title="Projects" description="Open source projects, live from GitHub.">
+  <a class="page-back" href="/"
+    ><span class="back-arrow" aria-hidden="true">↩</span>Index</a
+  >
+  <div class="doc-title">
+    projects<span class="age">, {projects.length} repos</span>
+  </div>
+
+  <p class="projects-source-note">
+    {
+      source === 'github'
+        ? 'Pulled live from GitHub at build time.'
+        : 'GitHub API unavailable at build time — showing curated fallback list.'
+    }
+  </p>
+
+  <ul class="projects-grid">
+    {
+      projects.map((project) => (
+        <li class="project-card">
+          <a href={project.url} target="_blank" rel="noopener noreferrer">
+            <span class="project-name">{project.name}</span>
+            <span class="project-desc">{project.description}</span>
+            <span class="project-meta">
+              {project.language && <span>{project.language}</span>}
+              <span>★ {project.stars}</span>
+            </span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</NotionLayout>
+
+<style>
+  .projects-source-note {
+    color: var(--text-secondary, #8b949e);
+    font-size: 0.85rem;
+    margin: 0.25rem 0 1.5rem;
+  }
+
+  .projects-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+
+  .project-card a {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    height: 100%;
+    padding: 1rem 1.15rem;
+    border: 1px solid var(--border-color, #d0d7de40);
+    border-radius: 10px;
+    text-decoration: none;
+  }
+
+  .project-card a:hover {
+    border-color: var(--accent, #58a6ff);
+  }
+
+  .project-name {
+    font-weight: 700;
+  }
+
+  .project-desc {
+    font-size: 0.88rem;
+    opacity: 0.85;
+    flex-grow: 1;
+  }
+
+  .project-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.78rem;
+    color: var(--text-secondary, #8b949e);
+  }
+</style>

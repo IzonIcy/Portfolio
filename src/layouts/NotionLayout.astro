@@ -10,12 +10,17 @@ interface Props {
 const {
   title = 'Ryan Bahadori',
   description = 'Developer, wrestler, and photographer.',
-  image = 'https://ryanbahadori.com/static/images/og.webp',
+  image,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
+// Per-page OG images are generated at /og/<route>.png by src/pages/og.
+// Pages may still override with an explicit `image` prop.
 const pathname = Astro.url.pathname;
+const ogRoute =
+  pathname === '/' ? 'index' : pathname.replace(/^\//, '').replace(/\/$/, '');
+const ogImage = image ?? new URL(`/og/${ogRoute.replaceAll('/', '-')}.png`, Astro.site).toString();
 const isActive = (href: string) => {
   if (href === '/') return pathname === '/';
   return pathname === href || pathname.startsWith(href + '/');
@@ -70,7 +75,7 @@ const isActive = (href: string) => {
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
+    <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="Ryan Bahadori" />
@@ -80,7 +85,7 @@ const isActive = (href: string) => {
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={image} />
+    <meta property="twitter:image" content={ogImage} />
     <meta property="twitter:site" content="@FlayIcy" />
 
     <meta name="author" content="Ryan Bahadori" />
@@ -859,6 +864,13 @@ const isActive = (href: string) => {
         <a
           href="/writing"
           aria-current={isActive('/writing') ? 'page' : undefined}>Writing</a
+        >
+        <a
+          href="/projects"
+          aria-current={isActive('/projects') ? 'page' : undefined}>Projects</a
+        >
+        <a href="/search" aria-current={isActive('/search') ? 'page' : undefined}
+          >Search</a
         >
         <a
           href="https://x.com/FlayIcy"
