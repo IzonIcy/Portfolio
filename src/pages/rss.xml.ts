@@ -3,7 +3,7 @@ import type { APIRoute } from 'astro';
 
 const SITE = 'https://ryanbahadori.com';
 const TITLE = 'Ryan Bahadori';
-const DESCRIPTION = 'thoughts on code, wrestling, and everything else.';
+const DESCRIPTION = 'thoughts on code and everything else.';
 
 function escapeXml(str: string) {
   return str
