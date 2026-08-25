@@ -59,7 +59,7 @@ function toCard(repo: GithubRepo): ProjectCard {
   };
 }
 
-export async function fetchProjects(limit = 8): Promise<{
+export async function fetchProjects(limit = 30): Promise<{
   projects: ProjectCard[];
   source: 'github' | 'fallback';
 }> {
