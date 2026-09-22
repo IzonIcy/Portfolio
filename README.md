@@ -41,7 +41,7 @@ src/
 
 ## Why Astro?
 
-I've used Next.js for years but for a content site it always felt like overkill. Astro gives you zero JS by default — the blog pages are just HTML and CSS until you actually need a component that does something interactive. Simpler mental model, faster builds.
+I've used Next.js for years but for a content site it always felt like overkill. Astro gives you zero JS by default and the blog pages are just HTML and CSS until you actually need a component that does something interactive. Simpler mental model, and has faster builds.
 
 ## License
 
