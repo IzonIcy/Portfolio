@@ -108,8 +108,7 @@ const isActive = (href: string) => {
           url: 'https://ryanbahadori.com',
         },
       })}
-    />
-
+    ></script>
     <!-- Self-hosted Inter (variable) — preloaded for first-paint. JetBrains
          Mono falls back to system mono stack. -->
     <link
@@ -172,7 +171,6 @@ const isActive = (href: string) => {
         syncThemeButtons();
       });
     </script>
-
     <style is:global>
       /* Self-hosted Inter — single variable woff2 covers 400 + 500 */
       @font-face {
@@ -836,63 +834,77 @@ const isActive = (href: string) => {
     </style>
   </head>
   <body>
-    <a href="#page-body" class="skip-link">Skip to content</a>
+    <a href="#page-body" class="skip-link">
+      Skip to content
+    </a>
     <div
       class="cursor"
       aria-hidden="true"
       transition:persist
       transition:name="cursor"
-    >
-    </div>
+    ></div>
     <div
       class="nav-fade"
       aria-hidden="true"
       transition:persist
       transition:name="nav-fade"
-    >
-    </div>
+    ></div>
     <header class="page-nav" transition:persist transition:name="page-nav">
       <a
         class="name"
         href="/"
         aria-current={isActive('/') ? 'page' : undefined}
       >
-        Ryan Bahadori<br /><span class="yr">2026</span>
+        Ryan Bahadori
+        <br />
+        <span class="yr">2026</span>
       </a>
       <nav class="links">
-        <a href="/work" aria-current={isActive('/work') ? 'page' : undefined}
-          >Work</a
-        >
+        <a href="/work" aria-current={isActive('/work') ? 'page' : undefined}>
+          Work
+        </a>
         <a
           href="/writing"
-          aria-current={isActive('/writing') ? 'page' : undefined}>Writing</a
+          aria-current={isActive('/writing') ? 'page' : undefined}
         >
+          Writing
+        </a>
         <a
           href="/projects"
-          aria-current={isActive('/projects') ? 'page' : undefined}>Projects</a
+          aria-current={isActive('/projects') ? 'page' : undefined}
         >
+          Projects
+        </a>
         <a
           href="/search"
-          aria-current={isActive('/search') ? 'page' : undefined}>Search</a
+          aria-current={isActive('/search') ? 'page' : undefined}
         >
+          Search
+        </a>
         <a
           href="https://x.com/FlayIcy"
           target="_blank"
           rel="noopener noreferrer"
-          data-no-arrow>X</a
+          data-no-arrow
         >
+          X
+        </a>
         <a
           href="https://www.linkedin.com/in/ryan-bahadori-95a9383ab/"
           target="_blank"
           rel="noopener noreferrer"
-          data-no-arrow>LinkedIn</a
+          data-no-arrow
         >
+          LinkedIn
+        </a>
         <button
           type="button"
           data-email-copy
           data-no-arrow
-          aria-label="Copy email to clipboard">Email</button
+          aria-label="Copy email to clipboard"
         >
+          Email
+        </button>
         <button
           class="theme-toggle"
           type="button"
@@ -916,7 +928,8 @@ const isActive = (href: string) => {
           <svg class="moon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path
               d="M13 9.2A5.5 5.5 0 0 1 6.8 3a5.5 5.5 0 1 0 6.2 6.2Z"
-              fill="currentColor"></path>
+              fill="currentColor"
+            ></path>
           </svg>
         </button>
       </nav>

@@ -6,9 +6,12 @@ const requestedPath = Astro.url.pathname;
 ---
 
 <NotionLayout title="404" description="page not found">
-  <a class="page-back" href="/"
-    ><span class="back-arrow" aria-hidden="true">↩</span>Index</a
-  >
+  <a class="page-back" href="/">
+    <span class="back-arrow" aria-hidden="true">
+      ↩
+    </span>
+    Index
+  </a>
   <div class="doc-title">
     404<span class="age">, not found</span>
   </div>
@@ -28,7 +31,8 @@ const requestedPath = Astro.url.pathname;
               stroke="currentColor"
               stroke-width="1.4"
               stroke-linecap="round"
-              stroke-linejoin="round"></path>
+              stroke-linejoin="round"
+            ></path>
           </svg>
         </span>
       </span>
@@ -37,30 +41,42 @@ const requestedPath = Astro.url.pathname;
     <div class="children">
       <div class="node" data-node>
         <div class="row">
-          <span class="bullet-cell"><span class="bullet"></span></span><span
-            class="label"><Mention href="/">home</Mention></span
-          >
+          <span class="bullet-cell">
+            <span class="bullet"></span>
+          </span>
+          <span class="label">
+            <Mention href="/">home</Mention>
+          </span>
         </div>
       </div>
       <div class="node" data-node>
         <div class="row">
-          <span class="bullet-cell"><span class="bullet"></span></span><span
-            class="label"><Mention href="/writing">writing</Mention></span
-          >
+          <span class="bullet-cell">
+            <span class="bullet"></span>
+          </span>
+          <span class="label">
+            <Mention href="/writing">writing</Mention>
+          </span>
         </div>
       </div>
       <div class="node" data-node>
         <div class="row">
-          <span class="bullet-cell"><span class="bullet"></span></span><span
-            class="label"><Mention href="/work">work</Mention></span
-          >
+          <span class="bullet-cell">
+            <span class="bullet"></span>
+          </span>
+          <span class="label">
+            <Mention href="/work">work</Mention>
+          </span>
         </div>
       </div>
       <div class="node" data-node>
         <div class="row">
-          <span class="bullet-cell"><span class="bullet"></span></span><span
-            class="label"><Mention href="/resources">resources</Mention></span
-          >
+          <span class="bullet-cell">
+            <span class="bullet"></span>
+          </span>
+          <span class="label">
+            <Mention href="/resources">resources</Mention>
+          </span>
         </div>
       </div>
     </div>
@@ -68,7 +84,9 @@ const requestedPath = Astro.url.pathname;
 
   <div class="write-row" aria-hidden>
     <span class="ghost-bullet"></span>
-    <span><span class="caret-blink"></span></span>
+    <span>
+      <span class="caret-blink"></span>
+    </span>
   </div>
 </NotionLayout>
 

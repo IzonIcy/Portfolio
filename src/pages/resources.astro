@@ -70,9 +70,12 @@ function sourceFrom(url: string) {
   description="stuff that shaped my thinking — books, posts, talks, tools."
 >
   <main class="resources-page">
-    <a class="page-back" href="/"
-      ><span class="back-arrow" aria-hidden="true">↩</span>Index</a
-    >
+    <a class="page-back" href="/">
+      <span class="back-arrow" aria-hidden="true">
+        ↩
+      </span>
+      Index
+    </a>
     <div class="doc-title">
       resources<span class="age">, {totalCount} items</span>
     </div>
@@ -81,54 +84,54 @@ function sourceFrom(url: string) {
       stuff that shaped my thinking — books, posts, talks, tools.
     </p>
 
-    {
-      grouped.map((cat) => (
-        <div
-          class={`node has-children ${cat.items.length > 0 ? 'open' : ''}`}
-          data-node
-        >
-          <div class="row has-children" tabindex="0">
-            <span class="bullet-cell">
-              <span class="bullet" />
-              <span class="caret" aria-hidden>
-                <svg viewBox="0 0 8 8" fill="none">
-                  <path
-                    d="M2 1l4 3-4 3"
-                    stroke="currentColor"
-                    stroke-width="1.4"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </span>
+    {grouped.map((cat) => (
+      <div
+        class={`node has-children ${cat.items.length > 0 ? 'open' : ''}`}
+        data-node
+      >
+        <div class="row has-children" tabindex="0">
+          <span class="bullet-cell">
+            <span class="bullet" />
+            <span class="caret" aria-hidden>
+              <svg viewBox="0 0 8 8" fill="none">
+                <path
+                  d="M2 1l4 3-4 3"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </span>
-            <span class="label">
-              {cat.label}
-              <span class="count">{cat.items.length}</span>
-            </span>
-          </div>
-          <div class="children">
-            {cat.items.map((r) => (
-              <div class="node" data-node>
-                <div class="row">
-                  <span class="bullet-cell">
-                    <span class="bullet" />
-                  </span>
-                  <span class="label">
-                    <Mention href={r.link}>{r.title.toLowerCase()}</Mention>
-                    <span class="meta">{sourceFrom(r.link)}</span>
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
+          </span>
+          <span class="label">
+            {cat.label}
+            <span class="count">{cat.items.length}</span>
+          </span>
         </div>
-      ))
-    }
+        <div class="children">
+          {cat.items.map((r) => (
+            <div class="node" data-node>
+              <div class="row">
+                <span class="bullet-cell">
+                  <span class="bullet" />
+                </span>
+                <span class="label">
+                  <Mention href={r.link}>{r.title.toLowerCase()}</Mention>
+                  <span class="meta">{sourceFrom(r.link)}</span>
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
 
     <div class="write-row" aria-hidden>
       <span class="ghost-bullet"></span>
-      <span><span class="caret-blink"></span></span>
+      <span>
+        <span class="caret-blink"></span>
+      </span>
     </div>
   </main>
 </NotionLayout>

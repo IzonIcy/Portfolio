@@ -10,39 +10,42 @@ const totalProjects = works.length;
   title="Work"
   description="stuff i built. solo projects, open source."
 >
-  <a class="page-back" href="/"
-    ><span class="back-arrow" aria-hidden="true">↩</span>Index</a
-  >
+  <a class="page-back" href="/">
+    <span class="back-arrow" aria-hidden="true">
+      ↩
+    </span>
+    Index
+  </a>
   <div class="doc-title">
     work<span class="age">, {totalProjects} projects</span>
   </div>
 
   <p class="doc-sub">open source projects on github.</p>
 
-  {
-    works.map((work) => (
-      <div class="node" data-node>
-        <div class="row">
-          <span class="bullet-cell">
-            <span class="bullet" />
-          </span>
-          <span class="label work-line">
-            {work.link ? (
-              <Mention href={work.link}>{work.title.toLowerCase()}</Mention>
-            ) : (
-              <span class="work-title">{work.title.toLowerCase()}</span>
-            )}
-            <span class="work-desc">{work.description.toLowerCase()}</span>
-            {work.language && <span class="meta">{work.language}</span>}
-          </span>
-        </div>
+  {works.map((work) => (
+    <div class="node" data-node>
+      <div class="row">
+        <span class="bullet-cell">
+          <span class="bullet" />
+        </span>
+        <span class="label work-line">
+          {work.link ? (
+            <Mention href={work.link}>{work.title.toLowerCase()}</Mention>
+          ) : (
+            <span class="work-title">{work.title.toLowerCase()}</span>
+          )}
+          <span class="work-desc">{work.description.toLowerCase()}</span>
+          {work.language && <span class="meta">{work.language}</span>}
+        </span>
       </div>
-    ))
-  }
+    </div>
+  ))}
 
   <div class="write-row" aria-hidden>
     <span class="ghost-bullet"></span>
-    <span><span class="caret-blink"></span></span>
+    <span>
+      <span class="caret-blink"></span>
+    </span>
   </div>
 </NotionLayout>
 

@@ -9,36 +9,35 @@ const { projects, source } = await fetchProjects();
   title="Projects"
   description="Open source projects, live from GitHub."
 >
-  <a class="page-back" href="/"
-    ><span class="back-arrow" aria-hidden="true">↩</span>Index</a
-  >
+  <a class="page-back" href="/">
+    <span class="back-arrow" aria-hidden="true">
+      ↩
+    </span>
+    Index
+  </a>
   <div class="doc-title">
     projects<span class="age">, {projects.length} repos</span>
   </div>
 
   <p class="projects-source-note">
-    {
-      source === 'github'
-        ? 'Pulled live from GitHub at build time.'
-        : 'GitHub API unavailable at build time. Showing curated fallback list.'
-    }
+    {source === 'github'
+      ? 'Pulled live from GitHub at build time.'
+      : 'GitHub API unavailable at build time. Showing curated fallback list.'}
   </p>
 
   <ul class="projects-grid">
-    {
-      projects.map((project) => (
-        <li class="project-card">
-          <a href={project.url} target="_blank" rel="noopener noreferrer">
-            <span class="project-name">{project.name}</span>
-            <span class="project-desc">{project.description}</span>
-            <span class="project-meta">
-              {project.language && <span>{project.language}</span>}
-              <span>★ {project.stars}</span>
-            </span>
-          </a>
-        </li>
-      ))
-    }
+    {projects.map((project) => (
+      <li class="project-card">
+        <a href={project.url} target="_blank" rel="noopener noreferrer">
+          <span class="project-name">{project.name}</span>
+          <span class="project-desc">{project.description}</span>
+          <span class="project-meta">
+            {project.language && <span>{project.language}</span>}
+            <span>★ {project.stars}</span>
+          </span>
+        </a>
+      </li>
+    ))}
   </ul>
 </NotionLayout>
 

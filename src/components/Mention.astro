@@ -25,7 +25,7 @@ const isExternal = external ?? detectExternal(href);
   class="mention"
   data-mention
   href={href}
-  {...isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {}}
+  {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
 >
   <slot />
   {isExternal && <span class="mention-arrow" aria-hidden="true" />}

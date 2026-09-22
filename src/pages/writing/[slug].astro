@@ -36,34 +36,39 @@ const editUrl = `https://github.com/IzonIcy/Portfolio/edit/main/src/content/writ
   description={post.data.summary}
   image={post.data.image}
 >
-  <div class="reading-progress" aria-hidden="true"><span></span></div>
+  <div class="reading-progress" aria-hidden="true">
+    <span></span>
+  </div>
 
-  <a class="page-back" href="/writing"
-    ><span class="back-arrow" aria-hidden="true">↩</span>Writing</a
-  >
+  <a class="page-back" href="/writing">
+    <span class="back-arrow" aria-hidden="true">
+      ↩
+    </span>
+    Writing
+  </a>
 
   <article class="post">
     <header class="post-head">
       <p class="post-date">
         <time datetime={post.data.publishedAt}>{dateFmt}</time>
-        <span class="post-meta"
-          >· <time datetime={`PT${mins}M`}>{mins} min read</time></span
-        >
+        <span class="post-meta">
+          · <time datetime={`PT${mins}M`}>{mins} min read</time>
+        </span>
       </p>
-      <h1 class="post-title" tabindex="0">{cleanedTitle}</h1>
+      <h1 class="post-title" tabindex="0">
+        {cleanedTitle}
+      </h1>
     </header>
 
-    {
-      post.data.image && (
-        <img
-          class="post-cover"
-          alt={post.data.title}
-          src={post.data.image}
-          loading="lazy"
-          decoding="async"
-        />
-      )
-    }
+    {post.data.image && (
+      <img
+        class="post-cover"
+        alt={post.data.title}
+        src={post.data.image}
+        loading="lazy"
+        decoding="async"
+      />
+    )}
 
     <div class="prose" data-prose>
       <Content />
@@ -82,8 +87,13 @@ const editUrl = `https://github.com/IzonIcy/Portfolio/edit/main/src/content/writ
       </a>
     </footer>
 
-    <div class="toast" id="post-toast" role="status" aria-live="polite" hidden>
-    </div>
+    <div
+      class="toast"
+      id="post-toast"
+      role="status"
+      aria-live="polite"
+      hidden
+    ></div>
   </article>
 
   <aside class="post-toc" aria-label="On this page" id="post-toc"></aside>
