@@ -216,8 +216,8 @@ const isActive = (href: string) => {
       }
 
       /* When the user prefers dark and data-theme hasn't been written yet
-         (brief gap during view transition), default to dark tokens so we
-         never flash a white background before paint. */
+               (brief gap during view transition), default to dark tokens so we
+               never flash a white background before paint. */
       @media (prefers-color-scheme: dark) {
         :root:not([data-theme='light']) {
           --notion-bg: #0f0f10;
@@ -334,10 +334,7 @@ const isActive = (href: string) => {
         .cursor.visible {
           opacity: 0.55;
         }
-        /* Hide the native cursor on EVERY element (page-local rules use
-           cursor: text/pointer in many places — !important wins them all).
-           Text inputs keep the native I-beam so the user can still see
-           where they're typing in real fields. */
+        /* Hide the native cursor on EVERY element (page-local rules use cursor: text/pointer in many places — !important wins them all). Text inputs keep the native I-beam so the user can still see where they're typing in real fields. */
         html,
         body,
         *,
@@ -551,7 +548,7 @@ const isActive = (href: string) => {
       }
 
       /* Meta link — for "all essays", "all work", "view more" rows
-         Renders as italic muted with subtle chevron, never as a Mention pill */
+               Renders as italic muted with subtle chevron, never as a Mention pill */
       .meta-link {
         font-style: italic;
         color: var(--notion-faint);
@@ -588,8 +585,8 @@ const isActive = (href: string) => {
       }
 
       /* Outliner interactive surfaces never select text on rapid click —
-         parent rows are toggles, bullets are buttons, mention pills are
-         links. Body text inside leaf rows stays selectable. */
+               parent rows are toggles, bullets are buttons, mention pills are
+               links. Body text inside leaf rows stays selectable. */
       .row.has-children,
       .bullet-cell,
       .caret,
@@ -637,17 +634,17 @@ const isActive = (href: string) => {
       }
 
       /* <main tabindex="-1"> accepts programmatic focus from the skip link,
-         but shouldn't paint a default focus ring around the entire viewport
-         when that focus lands. */
+               but shouldn't paint a default focus ring around the entire viewport
+               when that focus lands. */
       .page-body:focus,
       .page-body:focus-visible {
         outline: none;
       }
 
       /* --- Universal cascade for direct children of .page-body ---
-         Scoped to html:not(.cascade-done) so the animation only plays
-         once per session, never on subsequent navigations. Wrapped in
-         :where() to zero specificity so page-level opacity rules still win. */
+               Scoped to html:not(.cascade-done) so the animation only plays
+               once per session, never on subsequent navigations. Wrapped in
+               :where() to zero specificity so page-level opacity rules still win. */
       :where(html:not(.cascade-done) .page-body) > * {
         opacity: 0;
         transform: translateY(3px);
@@ -736,10 +733,7 @@ const isActive = (href: string) => {
           padding: 8px;
           margin: -8px;
         }
-        /* Outliner targets — bullets & rows for touch.
-           Pseudo-element overlay expands the tap area without shifting
-           layout (padding/negative-margin pushed the bullet past the
-           children container's overflow clip and off the text baseline). */
+        /* Outliner targets — bullets & rows for touch. Pseudo-element overlay expands the tap area without shifting layout (padding/negative-margin pushed the bullet past the children container's overflow clip and off the text baseline). */
         .bullet-cell::after {
           content: '';
           position: absolute;
@@ -771,8 +765,8 @@ const isActive = (href: string) => {
       }
 
       /* Pure crossfade for view transitions — no translate, no scale.
-         Pages just swap; the corner nav and fade stay planted (their own
-         transition:name overrides this animation to none). */
+               Pages just swap; the corner nav and fade stay planted (their own
+               transition:name overrides this animation to none). */
       ::view-transition-old(root) {
         animation: page-fade-out 160ms ease both;
       }
@@ -793,8 +787,8 @@ const isActive = (href: string) => {
         }
       }
       /* Persisted chrome doesn't animate during navigation — the corner
-         nav, fade, and custom cursor all stay planted while the page
-         swaps under them. */
+               nav, fade, and custom cursor all stay planted while the page
+               swaps under them. */
       ::view-transition-old(page-nav),
       ::view-transition-new(page-nav),
       ::view-transition-old(nav-fade),
