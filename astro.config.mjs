@@ -3,6 +3,6 @@ import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://ryanbahadori.com',
+  site: 'https://portfolio-ecru-rho-94.vercel.app',
   integrations: [react(), sitemap()],
 });

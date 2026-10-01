@@ -28,15 +28,6 @@ export const works: WorkCardType[] = [
     forks: 0,
   },
   {
-    title: "DotFiles",
-    description: "macos dotfiles managed with GNU stow",
-    year: 2025,
-    link: "https://github.com/IzonIcy/DotFiles",
-    language: "CSS",
-    stars: 0,
-    forks: 0,
-  },
-  {
     title: "LumiTerm",
     description: "GPU-rendered terminal emulator written in rust",
     year: 2026,
