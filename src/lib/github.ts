@@ -17,26 +17,27 @@ export type ProjectCard = {
 
 const FALLBACK_PROJECTS: ProjectCard[] = [
   {
-    name: 'Angel',
-    description:
-      'AI agent that connects to Discord, Slack, iMessage, and Signal with tool use, memory, and coding agents.',
-    url: 'https://github.com/IzonIcy/Angel',
-    stars: 0,
-    language: 'TypeScript',
-  },
-  {
-    name: 'Clay',
-    description: 'Fast Homebrew-compatible package manager.',
-    url: 'https://github.com/IzonIcy/Clay',
-    stars: 0,
-    language: 'Rust',
-  },
-  {
     name: 'Mist',
     description: 'Tiling window manager for macOS, built on Apple APIs only.',
     url: 'https://github.com/IzonIcy/Mist',
     stars: 0,
     language: 'Swift',
+  },
+  {
+    name: 'LumiTerm',
+    description:
+      'GPU-accelerated terminal emulator written in Rust, built on egui and portable-pty.',
+    url: 'https://github.com/IzonIcy/LumiTerm',
+    stars: 1,
+    language: 'Rust',
+  },
+  {
+    name: 'LumiComp',
+    description:
+      'Multi-stage C compiler: lexer, preprocessor, parser, semantic analysis, IR codegen.',
+    url: 'https://github.com/IzonIcy/LumiComp',
+    stars: 0,
+    language: 'C',
   },
 ];
 
