@@ -5,15 +5,13 @@ interface Props {
 }
 
 const { href, external } = Astro.props;
-/* Treat anything with a hostname that isn't exactly ryanbahadori.com as
-   external — subdomains are separate sites and deserve the ↗ arrow. */
+/* Treat anything with a hostname that isn't exactly the deployed site as
+   external — other hosts are separate sites and deserve the ↗ arrow. */
 function detectExternal(url: string): boolean {
   if (!/^https?:\/\//.test(url)) return false;
   try {
     const u = new URL(url);
-    return (
-      u.hostname !== 'ryanbahadori.com' && u.hostname !== 'www.ryanbahadori.com'
-    );
+    return u.hostname !== 'portfolio-ecru-rho-94.vercel.app';
   } catch {
     return false;
   }

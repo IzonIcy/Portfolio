@@ -121,7 +121,7 @@
   }
 
   /* External link ↗ arrow — SVG-mask glyph (thicker + shorter than U+2197) */
-  a[href^='http']:not([href*='://ryanbahadori.com'])::after {
+  a[href^='http']:not([href*='://portfolio-ecru-rho-94.vercel.app'])::after {
     content: '';
     display: inline-block;
     width: 0.62em;
