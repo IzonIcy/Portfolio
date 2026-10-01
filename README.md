@@ -4,20 +4,18 @@ Live at [portfolio-ecru-rho-94.vercel.app](https://portfolio-ecru-rho-94.vercel.
 
 [![CI](https://github.com/IzonIcy/Portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/IzonIcy/Portfolio/actions/workflows/ci.yml)
 
-Personal site and blog. Built with Astro because I wanted something fast that doesn't ship a megabyte of JavaScript just to render text.
+Personal site. Built with Astro because I wanted something fast that doesn't ship a megabyte of JavaScript just to render text.
 
 ## What's here
 
 - A portfolio of work and projects
-- Long-form writing on things I've been thinking about
-- RSS feed at `/rss.xml`
+- Projects pulled live from GitHub at build time
+- Search over the whole site via Pagefind
 - Dark mode, responsive, hits 95+ on Lighthouse
 
 ## Stack
 
-Astro 5, React 18 (where I actually need interactivity), Tailwind CSS, MDX for content. Deployed on Vercel.
-
-The MDX pipeline uses rehype-pretty-code (Shiki) for syntax highlighting — I spent way too long tweaking the theme config to get it right.
+Astro 7, React 19 (where I actually need interactivity), Tailwind CSS. Deployed on Vercel.
 
 ## Run it
 
@@ -31,8 +29,7 @@ npm run build   # static site to dist/
 
 ```
 src/
-├── pages/          # routes: index, work, writing/[slug], etc.
-├── content/        # MDX posts
+├── pages/          # routes: index, work, projects, resources, search
 ├── components/     # astro + react components
 ├── layouts/        # page shells
 ├── data/           # structured content (work history, resources)
@@ -41,7 +38,7 @@ src/
 
 ## Why Astro?
 
-I've used Next.js for years but for a content site it always felt like overkill. Astro gives you zero JS by default and the blog pages are just HTML and CSS until you actually need a component that does something interactive. Simpler mental model, and has faster builds.
+I've used Next.js for years but for a content site it always felt like overkill. Astro gives you zero JS by default and the pages are just HTML and CSS until you actually need a component that does something interactive. Simpler mental model, and has faster builds.
 
 ## License
 

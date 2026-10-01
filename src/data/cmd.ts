@@ -21,14 +21,6 @@ export const actions: Action[] = [
     iconColor: "#5D0F07",
   },
   {
-    name: "Writing",
-    keywords: "writing",
-    href: "/writing",
-    section: "Navigation",
-    color: "#F7D358",
-    iconColor: "#673D13",
-  },
-  {
     name: "Highlights",
     keywords: "highlights",
     href: "/work",
@@ -64,12 +56,6 @@ export const Navigation: Action[] = [
     name: "Home",
     keywords: "home",
     href: "/",
-    section: "Navigation",
-  },
-  {
-    name: "Writing",
-    keywords: "writing",
-    href: "/writing",
     section: "Navigation",
   },
   {
