@@ -55,12 +55,6 @@ const isActive = (href: string) => {
     <meta name="title" content={title} />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title="Ryan Bahadori — writing"
-      href="/rss.xml"
-    />
 
     <meta
       name="theme-color"
@@ -856,12 +850,6 @@ const isActive = (href: string) => {
       <nav class="links">
         <a href="/work" aria-current={isActive('/work') ? 'page' : undefined}>
           Work
-        </a>
-        <a
-          href="/writing"
-          aria-current={isActive('/writing') ? 'page' : undefined}
-        >
-          Writing
         </a>
         <a
           href="/projects"

@@ -1,16 +1,6 @@
 ---
 import NotionLayout from '@/layouts/NotionLayout.astro';
 import Mention from '@/components/Mention.astro';
-import { getCollection } from 'astro:content';
-
-const allPosts = await getCollection('writing');
-const latestPosts = allPosts
-  .sort(
-    (a, b) =>
-      new Date(b.data.publishedAt).getTime() -
-      new Date(a.data.publishedAt).getTime(),
-  )
-  .slice(0, 5);
 ---
 
 <NotionLayout>
@@ -178,59 +168,6 @@ const latestPosts = allPosts
           <span class="label">
             <a class="meta-link" href="/work">
               all work
-            </a>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="node has-children open" data-node>
-    <div class="row has-children" tabindex="0">
-      <span class="bullet-cell">
-        <span class="bullet"></span>
-        <span class="caret" aria-hidden>
-          <svg viewBox="0 0 8 8" fill="none">
-            <path
-              d="M2 1l4 3-4 3"
-              stroke="currentColor"
-              stroke-width="1.4"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-          </svg>
-        </span>
-      </span>
-      <span class="label">
-        writing<span class="count">{latestPosts.length}</span>
-      </span>
-    </div>
-    <div class="children">
-      {latestPosts.map((post) => (
-        <div class="node" data-node>
-          <div class="row">
-            <span class="bullet-cell">
-              <span class="bullet" />
-            </span>
-            <span class="label">
-              <>
-                <Mention href={`/writing/${post.id}`}>
-                  {post.data.title.replace(/[.!?]+$/, '').toLowerCase()}
-                </Mention>
-                <span class="meta">{post.data.publishedAt.slice(0, 4)}</span>
-              </>
-            </span>
-          </div>
-        </div>
-      ))}
-      <div class="node" data-node>
-        <div class="row">
-          <span class="bullet-cell">
-            <span class="bullet"></span>
-          </span>
-          <span class="label">
-            <a class="meta-link" href="/writing">
-              all essays
             </a>
           </span>
         </div>
