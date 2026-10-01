@@ -41,6 +41,12 @@ const FALLBACK_PROJECTS: ProjectCard[] = [
   },
 ];
 
+/**
+ * Repos that exist but aren't portfolio projects: forks, the dotfiles repo,
+ * this site itself, and the profile README repo.
+ */
+const EXCLUDED_REPOS = new Set(['config', 'portfolio', 'izonicy']);
+
 type GithubRepo = {
   name: string;
   description: string | null;
@@ -88,7 +94,7 @@ export async function fetchProjects(limit = 30): Promise<{
 
     const projects = repos
       .filter(
-        (repo) => !repo.fork && !repo.name.toLowerCase().includes('config'),
+        (repo) => !repo.fork && !EXCLUDED_REPOS.has(repo.name.toLowerCase()),
       )
       .sort((a, b) => b.stargazers_count - a.stargazers_count)
       .slice(0, limit)
