@@ -2,8 +2,13 @@
 import NotionLayout from '@/layouts/NotionLayout.astro';
 import Mention from '@/components/Mention.astro';
 import { works } from '@/data/work';
+import { caseStudyByTitle } from '@/data/caseStudies';
 
 const totalProjects = works.length;
+const caseStudyHref = (title: string) => {
+  const study = caseStudyByTitle.get(title);
+  return study ? `/projects/${study.slug}` : undefined;
+};
 ---
 
 <NotionLayout
@@ -36,6 +41,9 @@ const totalProjects = works.length;
           )}
           <span class="work-desc">{work.description.toLowerCase()}</span>
           {work.language && <span class="meta">{work.language}</span>}
+          {caseStudyHref(work.title) && (
+            <a class="case-link" href={caseStudyHref(work.title)}>case study</a>
+          )}
         </span>
       </div>
     </div>
@@ -220,6 +228,16 @@ const totalProjects = works.length;
     white-space: nowrap;
   }
   .work-line .work-title {
+    color: var(--notion-ink);
+  }
+  .case-link {
+    font-size: 13px;
+    color: var(--notion-muted);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    white-space: nowrap;
+  }
+  .case-link:hover {
     color: var(--notion-ink);
   }
   .work-line .meta,

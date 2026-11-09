@@ -1,0 +1,123 @@
+---
+import NotionLayout from '@/layouts/NotionLayout.astro';
+import { caseStudies } from '@/data/caseStudies';
+
+export function getStaticPaths() {
+  return caseStudies.map((study) => ({
+    params: { slug: study.slug },
+    props: { study },
+  }));
+}
+
+const { study } = Astro.props;
+---
+
+<NotionLayout title={study.title} description={study.summary}>
+  <a class="page-back" href="/work">
+    <span class="back-arrow" aria-hidden="true">↩</span>
+    Work
+  </a>
+  <div class="doc-title">{study.title}<span class="age">, {study.year}</span></div>
+  <p class="doc-sub">{study.summary}</p>
+
+  <div class="study-meta">
+    {study.stack.map((item) => <span class="chip">{item}</span>)}
+  </div>
+
+  <section class="study-section">
+    <h2>The problem</h2>
+    <p>{study.problem}</p>
+  </section>
+
+  <section class="study-section">
+    <h2>Decisions</h2>
+    {study.decisions.map((decision) => (
+      <div class="decision">
+        <h3>{decision.title}</h3>
+        <p>{decision.body}</p>
+      </div>
+    ))}
+  </section>
+
+  <section class="study-section">
+    <h2>Where it stands</h2>
+    <p>{study.result}</p>
+  </section>
+
+  <p class="study-links">
+    <a href={study.repo} target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+  </p>
+</NotionLayout>
+
+<style is:global>
+  .doc-title {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.022em;
+    line-height: 1.3;
+    padding: 0 0 12px;
+    color: var(--notion-ink);
+  }
+  .doc-title .age {
+    color: var(--notion-faint);
+    font-weight: 400;
+  }
+  .doc-sub {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--notion-muted);
+    margin: 0 0 16px;
+    max-width: 620px;
+  }
+  .study-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0 0 32px;
+  }
+  .chip {
+    font-size: 12px;
+    padding: 2px 8px;
+    border: 1px solid var(--notion-border, #d0d7de40);
+    border-radius: 999px;
+    color: var(--notion-muted);
+    white-space: nowrap;
+  }
+  .study-section {
+    margin: 0 0 28px;
+    max-width: 620px;
+  }
+  .study-section h2 {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0 0 8px;
+    color: var(--notion-ink);
+  }
+  .study-section h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 4px;
+    color: var(--notion-ink);
+  }
+  .study-section p {
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--notion-muted);
+    margin: 0 0 14px;
+  }
+  .decision {
+    padding-left: 12px;
+    border-left: 2px solid var(--notion-border, #d0d7de40);
+    margin: 0 0 16px;
+  }
+  .study-links {
+    font-size: 14.5px;
+    margin: 0 0 48px;
+  }
+  .study-links a {
+    color: var(--notion-ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>
