@@ -14,7 +14,7 @@
   "dependencies": {
     "@astrojs/react": "^6.0.5",
     "@astrojs/sitemap": "^3.7.4",
-    "astro": "^7.3.2",
+    "astro": "^7.4.7",
     "astro-og-canvas": "^0.13.1",
     "canvaskit-wasm": "0.41.1",
     "react": "^19.3.0",
