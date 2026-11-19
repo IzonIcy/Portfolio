@@ -42,7 +42,9 @@ const caseStudyHref = (title: string) => {
           <span class="work-desc">{work.description.toLowerCase()}</span>
           {work.language && <span class="meta">{work.language}</span>}
           {caseStudyHref(work.title) && (
-            <a class="case-link" href={caseStudyHref(work.title)}>case study</a>
+            <a class="case-link" href={caseStudyHref(work.title)}>
+              case study
+            </a>
           )}
         </span>
       </div>
