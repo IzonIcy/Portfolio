@@ -14,14 +14,21 @@ const { study } = Astro.props;
 
 <NotionLayout title={study.title} description={study.summary}>
   <a class="page-back" href="/work">
-    <span class="back-arrow" aria-hidden="true">↩</span>
+    <span class="back-arrow" aria-hidden="true">
+      ↩
+    </span>
     Work
   </a>
-  <div class="doc-title">{study.title}<span class="age">, {study.year}</span></div>
+  <div class="doc-title">
+    {study.title}
+    <span class="age">, {study.year}</span>
+  </div>
   <p class="doc-sub">{study.summary}</p>
 
   <div class="study-meta">
-    {study.stack.map((item) => <span class="chip">{item}</span>)}
+    {study.stack.map((item) => (
+      <span class="chip">{item}</span>
+    ))}
   </div>
 
   <section class="study-section">
@@ -45,7 +52,9 @@ const { study } = Astro.props;
   </section>
 
   <p class="study-links">
-    <a href={study.repo} target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+    <a href={study.repo} target="_blank" rel="noopener noreferrer">
+      Source on GitHub
+    </a>
   </p>
 </NotionLayout>
 
