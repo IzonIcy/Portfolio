@@ -12,26 +12,26 @@
     "lint:format": "prettier --cache --check ."
   },
   "dependencies": {
-    "@astrojs/react": "^6.0.5",
-    "@astrojs/sitemap": "^3.7.4",
-    "astro": "^7.4.11",
-    "astro-og-canvas": "^0.13.1",
-    "canvaskit-wasm": "0.41.1",
-    "react": "^19.3.0",
-    "react-dom": "^19.3.0"
+    "@astrojs/react": "^7.1.9",
+    "@astrojs/sitemap": "^3.7.5",
+    "astro": "^7.4.12",
+    "astro-og-canvas": "^0.13.3",
+    "canvaskit-wasm": "0.42.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.10",
-    "@tailwindcss/postcss": "^4.3.3",
+    "@astrojs/check": "^0.9.12",
+    "@tailwindcss/postcss": "^4.3.5",
     "@tailwindcss/typography": "^0.5.20",
     "pagefind": "^1.6.0",
-    "postcss": "^8.5.28",
-    "prettier": "^3.9.7",
+    "postcss": "^8.5.33",
+    "prettier": "^3.10.1",
     "prettier-plugin-astro": "^1.1.2",
     "prettier-plugin-tailwindcss": "^0.8.1",
-    "shiki": "^4.4.3",
+    "shiki": "^4.6.0",
     "tailwindcss": "^4.3.5",
-    "typescript": "^6.0.3"
+    "typescript": "^7.0.2"
   },
   "license": "MIT",
   "engines": {
