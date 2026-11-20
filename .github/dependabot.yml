@@ -7,7 +7,14 @@ updates:
     open-pull-requests-limit: 5
     groups:
       npm:
-        patterns: ["*"]
+        patterns: ['*']
+    ignore:
+      # astro check refuses to run on TypeScript 7, so a typescript major turns
+      # the whole npm group red. Remove this once astro check supports TS 7.
+      # https://github.com/withastro/astro/blob/main/packages/language-tools/ts-content-mapper/README.md
+      - dependency-name: 'typescript'
+        update-types:
+          - 'version-update:semver-major'
 
   - package-ecosystem: github-actions
     directory: '/'
@@ -16,4 +23,4 @@ updates:
     open-pull-requests-limit: 5
     groups:
       actions:
-        patterns: ["*"]
+        patterns: ['*']
