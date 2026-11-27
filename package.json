@@ -13,8 +13,8 @@
   },
   "dependencies": {
     "@astrojs/react": "^7.1.9",
-    "@astrojs/sitemap": "^3.7.5",
-    "astro": "^7.4.12",
+    "@astrojs/sitemap": "^3.7.6",
+    "astro": "^7.4.13",
     "astro-og-canvas": "^0.13.3",
     "canvaskit-wasm": "0.42.0",
     "react": "^19.3.1",
